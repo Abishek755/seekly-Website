@@ -1,0 +1,232 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Admin Login - Seekhly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#9cf0ff",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-primary": "#ffb693",
+                        "inverse-surface": "#213145",
+                        "outline": "#8e7164",
+                        "on-secondary-container": "#55637d",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#001f24",
+                        "surface-container-low": "#eff4ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#00a8bb",
+                        "on-surface": "#0b1c30",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-primary-container": "#572000",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#00373e",
+                        "primary-fixed-dim": "#ffb693",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "primary": "#a04100",
+                        "on-surface-variant": "#5a4136",
+                        "tertiary": "#006875",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "outline-variant": "#e2bfb0",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#515f78",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-fixed": "#ffdbcc",
+                        "background": "#f8f9ff",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed": "#351000",
+                        "secondary-container": "#d2e0fe",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-tint": "#a04100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "headline-xl": ["Montserrat"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    .glass-card-dark {
+        background: rgba(11, 28, 48, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+</style>
+</head>
+<body class="bg-inverse-surface text-inverse-on-surface font-body-md h-screen flex items-center justify-center selection:bg-primary-container selection:text-white relative overflow-hidden">
+    <!-- Background Decor -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] pointer-events-none translate-x-1/4 -translate-y-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-tertiary/10 rounded-full blur-[80px] pointer-events-none -translate-x-1/4 translate-y-1/4"></div>
+    </div>
+
+    <!-- Login Card -->
+    <div class="glass-card-dark rounded-xl p-lg w-full max-w-md relative z-10 border-t border-white/20 shadow-[0_20px_50px_rgba(255,107,0,0.1)]">
+        <div class="text-center mb-md">
+            <a href="../index.html" class="inline-block font-headline-md text-headline-md font-bold text-primary mb-2">Seekhly</a>
+            <h1 class="font-headline-md text-[24px] text-white">Admin Portal</h1>
+            <p class="font-body-md text-sm text-secondary-fixed-dim mt-2">Sign in to access your dashboard</p>
+        </div>
+
+        <div id="auth-error" class="hidden bg-error/20 border border-error/50 text-error-container p-sm rounded-lg mb-md flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">error</span>
+            <span id="auth-error-msg" class="text-sm">Invalid credentials</span>
+        </div>
+
+        <form id="login-form" class="space-y-md">
+            <div>
+                <label class="block font-label-md text-sm text-white/80 mb-2">Email Address</label>
+                <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40">mail</span>
+                    <input type="email" id="admin-email" required class="w-full bg-surface-container-highest/10 border border-white/20 rounded-lg py-3 pl-10 pr-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="admin@seekhly.com">
+                </div>
+            </div>
+            
+            <div>
+                <label class="block font-label-md text-sm text-white/80 mb-2">Password</label>
+                <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40">lock</span>
+                    <input type="password" id="admin-password" required class="w-full bg-surface-container-highest/10 border border-white/20 rounded-lg py-3 pl-10 pr-10 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="••••••••">
+                    <button type="button" id="toggle-pw" class="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white">
+                        <span class="material-symbols-outlined text-[18px]">visibility</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-sm">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="remember-me" class="rounded border-white/20 bg-white/10 text-primary focus:ring-primary focus:ring-offset-0">
+                    <span class="text-sm text-white/80">Remember me</span>
+                </label>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-[#a04100] to-[#ff6b00] text-white font-bold py-3 rounded-full transition-all duration-300 hover:shadow-[0_4px_15px_rgba(255,107,0,0.4)] active:scale-95 flex items-center justify-center">
+                <span id="btn-text">Sign In</span>
+                <span id="btn-spinner" class="material-symbols-outlined animate-spin hidden ml-2">progress_activity</span>
+            </button>
+        </form>
+    </div>
+
+    <!-- Firebase SDK (Using ESM for Vite) -->
+    <script type="module">
+        import { auth } from "../src/firebase.js";
+        import { signInWithEmailAndPassword, setPersistence, browserLocalPersistence, browserSessionPersistence } from "firebase/auth";
+
+        const form = document.getElementById('login-form');
+        const emailInput = document.getElementById('admin-email');
+        const passwordInput = document.getElementById('admin-password');
+        const rememberMe = document.getElementById('remember-me');
+        const errorDiv = document.getElementById('auth-error');
+        const errorMsg = document.getElementById('auth-error-msg');
+        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
+        const togglePw = document.getElementById('toggle-pw');
+
+        togglePw.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePw.querySelector('span').textContent = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                togglePw.querySelector('span').textContent = 'visibility';
+            }
+        });
+
+        function setLoading(loading) {
+            if (loading) {
+                btnText.textContent = 'Signing In...';
+                btnSpinner.classList.remove('hidden');
+                form.querySelector('button[type="submit"]').disabled = true;
+            } else {
+                btnText.textContent = 'Sign In';
+                btnSpinner.classList.add('hidden');
+                form.querySelector('button[type="submit"]').disabled = false;
+            }
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorDiv.classList.add('hidden');
+            
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+            
+            if (!email || !password) return;
+            
+            setLoading(true);
+            try {
+                const persistence = rememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
+                await setPersistence(auth, persistence);
+                await signInWithEmailAndPassword(auth, email, password);
+                window.location.href = '/admin/unified.html';
+            } catch (err) {
+                const messages = {
+                    'auth/invalid-credential': 'Invalid email or password.',
+                    'auth/user-not-found': 'No account found with this email.',
+                    'auth/wrong-password': 'Incorrect password.',
+                    'auth/too-many-requests': 'Too many failed attempts. Try again later.'
+                };
+                errorMsg.textContent = messages[err.code] || 'Sign-in failed. Please try again.';
+                errorDiv.classList.remove('hidden');
+            }
+            setLoading(false);
+        });
+
+        // Redirect if logged in
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                window.location.href = '/admin/unified.html';
+            }
+        });
+    </script>
+</body>
+</html>

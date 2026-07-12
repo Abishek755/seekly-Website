@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Seekhly Admin - Program &amp; Course Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d6e3ff",
+                        "outline-variant": "#e2bfb0",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-surface": "#213145",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#55637d",
+                        "inverse-primary": "#ffb693",
+                        "surface-container": "#e5eeff",
+                        "on-background": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#00a8bb",
+                        "secondary": "#515f78",
+                        "on-surface": "#0b1c30",
+                        "secondary-container": "#d2e0fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#001f24",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary": "#a04100",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9cf0ff",
+                        "tertiary": "#006875",
+                        "surface-dim": "#cbdbf5",
+                        "primary-container": "#ff6b00",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "on-tertiary-container": "#00373e",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5a4136",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "outline": "#8e7164",
+                        "primary-fixed": "#ffdbcc",
+                        "surface-tint": "#a04100",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-secondary-fixed": "#0d1c32",
+                        "on-primary-container": "#572000",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .gradient-btn {
+            background: linear-gradient(180deg, theme('colors.primary') 0%, theme('colors.primary-fixed-dim') 100%);
+        }
+        .gradient-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(160, 65, 0, 0.2);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.surface-variant');
+        }
+    </style>
+<script type="module" src="/admin/auth-guard.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar component generated from JSON -->
+<nav class="bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 sticky top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline/30 shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-md">
+
+</div>
+<!-- Navigation Links -->
+
+<!-- Trailing Action -->
+<div class="flex items-center gap-md">
+<div class="relative hidden lg:block">
+
+
+</div>
+
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-lg">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-lg gap-sm">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Program &amp; Course Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Manage your educational offerings. View active enrollments, update curriculum details, and launch new programs from this centralized dashboard.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-variant/50 transition-colors flex items-center gap-2 font-label-md text-label-md bg-surface-container-lowest shadow-[0px_4px_20px_rgba(10,25,47,0.02)]">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filter
+                </button>
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-variant/50 transition-colors flex items-center gap-2 font-label-md text-label-md bg-surface-container-lowest shadow-[0px_4px_20px_rgba(10,25,47,0.02)]">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export
+                </button>
+</div>
+</div>
+<!-- Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-variant shadow-[0px_4px_20px_rgba(10,25,47,0.05)] hover:shadow-lg hover:border-b-2 hover:border-b-primary transition-all duration-300 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-primary-container/20 transition-all"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="p-3 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined icon-fill">library_books</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary flex items-center gap-1 bg-tertiary-fixed/30 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12%
+                    </span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1 relative z-10">Total Active Programs</h3>
+<p class="font-headline-md text-headline-md text-on-background relative z-10">142</p>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-variant shadow-[0px_4px_20px_rgba(10,25,47,0.05)] hover:shadow-lg hover:border-b-2 hover:border-b-primary transition-all duration-300 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary-container/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-tertiary-container/20 transition-all"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="p-3 bg-surface-container rounded-lg text-tertiary">
+<span class="material-symbols-outlined icon-fill">group</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary flex items-center gap-1 bg-tertiary-fixed/30 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +5.4%
+                    </span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1 relative z-10">Total Enrollments</h3>
+<p class="font-headline-md text-headline-md text-on-background relative z-10">24,590</p>
+</div>
+<!-- Metric Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-variant shadow-[0px_4px_20px_rgba(10,25,47,0.05)] hover:shadow-lg hover:border-b-2 hover:border-b-primary transition-all duration-300 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-secondary-container/40 transition-all"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="p-3 bg-surface-container rounded-lg text-secondary">
+<span class="material-symbols-outlined icon-fill">star</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1 relative z-10">Avg Course Rating</h3>
+<p class="font-headline-md text-headline-md text-on-background relative z-10">4.8 <span class="text-sm text-on-surface-variant font-normal">/ 5.0</span></p>
+</div>
+</div>
+<!-- Main Data Table Section -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0px_4px_20px_rgba(10,25,47,0.05)] overflow-hidden">
+<!-- Table Controls -->
+<div class="p-md border-b border-surface-variant flex flex-col sm:flex-row justify-between items-center gap-4 bg-surface-bright/50">
+<h2 class="font-headline-md text-headline-md text-on-background">Course Catalog</h2>
+<div class="flex gap-3 w-full sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md" placeholder="Search courses..." type="text">
+</div>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-variant">
+<th class="py-4 px-md font-label-md text-label-md text-secondary uppercase tracking-wider">Program Name</th>
+<th class="py-4 px-md font-label-md text-label-md text-secondary uppercase tracking-wider">Category</th>
+<th class="py-4 px-md font-label-md text-label-md text-secondary uppercase tracking-wider">Instructor</th>
+<th class="py-4 px-md font-label-md text-label-md text-secondary uppercase tracking-wider">Enrollments</th>
+<th class="py-4 px-md font-label-md text-label-md text-secondary uppercase tracking-wider">Price</th>
+<th class="py-4 px-md font-label-md text-label-md text-secondary uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="py-4 px-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined icon-fill text-[20px]">menu_book</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-background font-semibold">DBHPS All Eight Exams Prep</p>
+<p class="font-caption text-caption text-on-surface-variant">Comprehensive syllabus coverage</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-md">
+<span class="bg-secondary-fixed/50 text-on-secondary-fixed-variant px-2 py-1 rounded-md font-caption text-caption">Certification</span>
+</td>
+<td class="py-4 px-md">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-dim overflow-hidden shrink-0">
+<img alt="Instructor avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a middle-aged female academic instructor in a well-lit studio, wearing a formal blazer. Modern corporate photography style, high resolution, clean white background, soft diffused lighting conveying approachability and expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp5r_BstSBjW3cXUX7tOIJYaKYnFkEMkMwn-LaxO0AXkYosop6hTv04IoMznGwfQK2_Z6aGShlyrAm8gyLi9nHC-3GfikXKUMV9mo3ObVlHcglRFxe94k2qlfaI7CuTRc-e4YJF8LAgtDdLRRPOQ_smJJow_5VgVcWsrBmzdioSavd3atap31jtJi25vQmneSjwmaoMkDlvMVxt601w3excuICN0JUKfw6UYHUPGwN6K3gADT-vGla">
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Dr. Meera Sharma</span>
+</div>
+</td>
+<td class="py-4 px-md">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-background">1,240</span>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden hidden lg:block">
+<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-md font-body-md text-body-md text-on-background font-medium">₹ 4,999</td>
+<td class="py-4 px-md text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-secondary hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-secondary hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="py-4 px-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined icon-fill text-[20px]">record_voice_over</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-background font-semibold flex items-center gap-2">
+                                            Spoken Hindi Mastery
+                                            <span class="bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">Trending</span>
+</p>
+<p class="font-caption text-caption text-on-surface-variant">Beginner to Intermediate conversational skills</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-md">
+<span class="bg-secondary-fixed/50 text-on-secondary-fixed-variant px-2 py-1 rounded-md font-caption text-caption">Language</span>
+</td>
+<td class="py-4 px-md">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-dim overflow-hidden shrink-0">
+<img alt="Instructor avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a young male language instructor in a modern office environment. He is smiling warmly, wearing a crisp button-down shirt. The lighting is bright and natural, indicating a friendly, modern educational setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxF95FAwrALJYO8J_SxFP_IHBMgWN-7zKJgzhWf0O7gObX2g2oIE_HkNDsT_XwLwlpJG981BNSa7_tZqWqnc7Jk_CeGnOFjQFh_gBL9CNyptu-VMx5c2ySKXr86Tv07z2OzBYKfN8ifZ1go3AETR6nLwypnhQJUjijVDtOMzgq3_e89OX_07kZsST4p8jijuv8hs4BIfSZ5ikf3yD3pbzEV0_UgtBGlHm3pTiQi_hKFP-73Fqj0dZu">
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Rajiv Kumar</span>
+</div>
+</td>
+<td class="py-4 px-md">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-background">3,850</span>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden hidden lg:block">
+<div class="bg-primary h-full rounded-full" style="width: 95%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-md font-body-md text-body-md text-on-background font-medium">₹ 2,499</td>
+<td class="py-4 px-md text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-secondary hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-secondary hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="py-4 px-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined icon-fill text-[20px]">code</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-background font-semibold">Web Development Bootcamp</p>
+<p class="font-caption text-caption text-on-surface-variant">Full-stack modern framework training</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-md">
+<span class="bg-secondary-fixed/50 text-on-secondary-fixed-variant px-2 py-1 rounded-md font-caption text-caption">Technology</span>
+</td>
+<td class="py-4 px-md">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-dim overflow-hidden shrink-0 flex items-center justify-center text-[10px] text-on-surface font-bold">
+                                        AS
+                                    </div>
+<span class="font-body-md text-body-md text-on-surface-variant">Anita Singh</span>
+</div>
+</td>
+<td class="py-4 px-md">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-background">842</span>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden hidden lg:block">
+<div class="bg-primary h-full rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-md font-body-md text-body-md text-on-background font-medium">₹ 12,000</td>
+<td class="py-4 px-md text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-secondary hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-secondary hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-surface-variant flex items-center justify-between text-on-surface-variant font-caption text-caption bg-surface-container-low">
+<span class="">Showing 1 to 3 of 142 entries</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors">3</button>
+<span class="w-8 h-8 flex items-center justify-center">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer component generated from JSON -->
+
+
+
+
+
+</body></html>

@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description"
+        content="Seekhly is South India's premier AI-powered EdTech platform for DBHPS exam prep, Spoken Hindi, and Govt. Teacher Certification. Based in Kovilpatti, serving Tamil Nadu & Bangalore.">
+    <meta name="keywords"
+        content="Spoken Hindi, DBHPS exams, Hindi teacher certification, Kovilpatti, Chennai, Bangalore, Coimbatore, AI language app, EdTech Tamil Nadu">
+    <title>Seekhly - The Smart Choice For Future</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#9cf0ff",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-primary": "#ffb693",
+                        "inverse-surface": "#213145",
+                        "outline": "#8e7164",
+                        "on-secondary-container": "#55637d",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#001f24",
+                        "surface-container-low": "#eff4ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#00a8bb",
+                        "on-surface": "#0b1c30",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-primary-container": "#572000",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#00373e",
+                        "primary-fixed-dim": "#ffb693",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "primary": "#a04100",
+                        "on-surface-variant": "#5a4136",
+                        "tertiary": "#006875",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "outline-variant": "#e2bfb0",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#515f78",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-fixed": "#ffdbcc",
+                        "background": "#f8f9ff",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed": "#351000",
+                        "secondary-container": "#d2e0fe",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-tint": "#a04100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "headline-xl": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(11, 28, 48, 0.65) !important;
+            backdrop-filter: blur(4px) !important;
+            -webkit-backdrop-filter: blur(4px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 0 8px 1px rgba(255, 255, 255, 0.05) !important;
+            overflow: hidden;
+            transition: all 0.3s ease !important;
+        }
+
+        .glass-nav.scrolled {
+            background: rgba(11, 28, 48, 0.3) !important;
+            backdrop-filter: blur(2px) !important;
+            -webkit-backdrop-filter: blur(2px) !important;
+        }
+
+        .glass-nav:hover {
+            background: rgba(11, 28, 48, 0.65) !important;
+            backdrop-filter: blur(4px) !important;
+            -webkit-backdrop-filter: blur(4px) !important;
+        }
+
+        .glass-nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        .glass-nav::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent, rgba(255, 255, 255, 0.05));
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            transition-delay: 0.3s;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .scroll-animate {
+                opacity: 0;
+                transform: translateY(2.5rem);
+                /* 10 in tailwind */
+                transition-property: all;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 700ms;
+            }
+
+            .scroll-animate.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-animate {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(10, 25, 47, 0.05);
+        }
+
+        .glass-card-dark {
+            background: rgba(11, 28, 48, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #a04100 0%, #ff6b00 100%);
+        }
+
+        /* Perspective container for the tracking cards */
+        .empowering-grid {
+            perspective: 1000px;
+        }
+
+        .tracking-card {
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delay-1 {
+            animation: float 6s ease-in-out 2s infinite;
+        }
+
+        .animate-float-delay-2 {
+            animation: float 6s ease-in-out 4s infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
+    <!-- TopNavBar -->
+    <nav
+        class="glass-nav fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 rounded-full transition-all duration-300 scale-90 origin-top">
+        <div class="flex justify-between items-center px-4 md:px-6 py-3">
+            <a class="font-headline-md text-headline-md font-bold text-white flex items-center gap-2 drop-shadow-sm ml-2"
+                href="index.html">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">language</span>
+                Seekhly
+            </a>
+            <div class="hidden lg:flex items-center space-x-1 bg-white/10 p-1.5 rounded-full border border-white/10">
+                <a class="font-label-md text-label-md bg-white text-[#0b1c30] font-bold shadow-md rounded-full px-5 py-2.5 transition-all duration-300"
+                    href="index.html">Home</a>
+                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
+                    href="index.html#courses">Courses</a>
+                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
+                    href="about.html">About</a>
+                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
+                    href="career.html">Careers</a>
+                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
+                    href="contact.html">Contact</a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button
+                    class="bg-primary hover:bg-primary-container text-white font-label-md text-label-md px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-md hover:shadow-lg active:scale-95 hidden md:block">
+                    Join Now
+                </button>
+                <button id="mobile-menu-btn" class="lg:hidden text-white bg-white/10 p-2 rounded-full border border-white/10">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener('scroll', function () {
+            const nav = document.querySelector('.glass-nav');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            }
+        });
+    </script>
+    <!-- Hero Section -->
+    <header class="relative min-h-[700px] flex items-center justify-center overflow-hidden bg-[#050308]">
+        <!-- Meridian-inspired Shader Background -->
+        <div class="absolute inset-0 z-0">
+            <!-- Container configured to be easily swappable for a video tag -->
+            <div class="absolute inset-0 w-full h-full" style="display:block;">
+                <!-- To use a video, replace the canvas below with: <video autoplay loop muted playsinline class="w-full h-full object-cover" src="..."></video> -->
+                <canvas height="921" id="shader-canvas-ANIMATION_27" style="display:block;width:100%;height:100%"
+                    width="1280"></canvas>
+                <script>
+                    (function () {
+                        const canvas = document.getElementById('shader-canvas-ANIMATION_27');
+
+                        // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+                        // This fires on initial layout and whenever the element is resized.
+                        function syncSize() {
+                            const w = canvas.clientWidth || 1280;
+                            const h = canvas.clientHeight || 720;
+                            if (canvas.width !== w || canvas.height !== h) {
+                                canvas.width = w;
+                                canvas.height = h;
+                            }
+                        }
+                        if (typeof ResizeObserver !== 'undefined') {
+                            new ResizeObserver(syncSize).observe(canvas);
+                        }
+                        syncSize();
+
+                        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                        if (!gl) return;
+                        const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+                        const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+// Simplex 2D noise
+vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+float snoise(vec2 v){
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+           -0.577350269189626, 0.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod(i, 289.0);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+  + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+    dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    
+    // Meridian-inspired Glow Palette (Optimized for Background)
+    // Core: Vibrant Orange (#ff6b00), Space: Deep Midnight, Glow: Soft Warmth
+    vec3 colorCore = vec3(1.0, 0.42, 0.0); 
+    vec3 colorSpace = vec3(0.02, 0.01, 0.05);
+    vec3 colorGlow = vec3(1.0, 0.6, 0.3);
+    
+    // Smooth fluid organic movement
+    float n1 = snoise(uv * 1.2 + u_time * 0.05);
+    float n2 = snoise(uv * 2.0 - u_time * 0.08);
+    float movement = smoothstep(-0.6, 0.6, n1 + n2);
+    
+    // Centered but slightly offset spherical core glow
+    vec2 center = vec2(0.85, 0.45); 
+    float distToCore = distance(uv, center);
+    float coreGlow = 1.0 - smoothstep(0.0, 0.8, distToCore);
+    
+    // Subtle mouse interaction for "kinetic" feel
+    float distToMouse = distance(uv, mouse);
+    float mouseInteraction = 1.0 - smoothstep(0.0, 0.5, distToMouse);
+    
+    // Combine layers for a deep atmospheric background
+    vec3 baseColor = mix(colorSpace, colorCore, coreGlow * 0.5 * movement);
+    baseColor += colorGlow * coreGlow * 0.25;
+    
+    // Add the interactive mouse highlight
+    vec3 finalColor = mix(baseColor, colorGlow, mouseInteraction * 0.3);
+    
+    // Global brightness boost for premium readability
+    finalColor = mix(finalColor, vec3(1.0), 0.03);
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+                        function cs(type, src) {
+                            const s = gl.createShader(type);
+                            gl.shaderSource(s, src);
+                            gl.compileShader(s);
+                            return s;
+                        }
+                        const prog = gl.createProgram();
+                        gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+                        gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+                        gl.linkProgram(prog);
+                        gl.useProgram(prog);
+                        const buf = gl.createBuffer();
+                        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+                        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+                        const pos = gl.getAttribLocation(prog, 'a_position');
+                        gl.enableVertexAttribArray(pos);
+                        gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+                        const uTime = gl.getUniformLocation(prog, 'u_time');
+                        const uRes = gl.getUniformLocation(prog, 'u_resolution');
+                        const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+                        // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+                        // Shaders that need normalized coords should use: u_mouse / u_resolution.
+                        let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+                        window.addEventListener('mousemove', (event) => {
+                            const rect = canvas.getBoundingClientRect();
+                            if (rect.width && rect.height) {
+                                const nx = (event.clientX - rect.left) / rect.width;
+                                const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+                                mouse.x = nx * canvas.width;
+                                mouse.y = ny * canvas.height;
+                            }
+                        });
+
+                        function render(t) {
+                            if (typeof ResizeObserver === 'undefined') syncSize();
+                            gl.viewport(0, 0, canvas.width, canvas.height);
+                            if (uTime) gl.uniform1f(uTime, t * 0.001);
+                            if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+                            if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+                            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+                            requestAnimationFrame(render);
+                        }
+                        render(0);
+                    })();
+                </script>
+            </div>
+            <!-- Subtle overlay for text legibility -->
+            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+        </div>
+        <div
+            class="relative z-20 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl flex flex-col md:flex-row items-center justify-between gap-xl">
+            <div class="w-full md:w-3/5 text-center md:text-left fade-in-up visible">
+
+                <h1
+                    class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-white mb-md drop-shadow-lg">
+                    The Smart Choice <br> <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-orange-400">For
+                        Future</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-white/90 mb-lg max-w-2xl mx-auto md:mx-0 drop-shadow-sm">
+                    Discover a new way to learn with interactive video lessons, weekly exams, and voice-based AI classes
+                    designed to accelerate your growth.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-md">
+                    <a href="about.html"
+                        class="w-full sm:w-auto bg-gradient-primary text-white font-label-md text-label-md px-xl py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-[0_8px_20px_rgba(255,107,0,0.4)] flex justify-center items-center">
+                        Explore More
+                    </a>
+                    <button
+                        class="w-full sm:w-auto flex items-center justify-center gap-sm bg-white/10 border border-white/20 text-white font-label-md text-label-md px-lg py-4 rounded-full backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:border-white/40 shadow-sm hover:shadow-md">
+                        <span class="material-symbols-outlined text-orange-400">play_circle</span>
+                        See How It Works
+                    </button>
+                </div>
+            </div>
+            <div class="w-full md:w-2/5 fade-in-up stagger-2 hidden md:block relative visible">
+                <!-- Floating Glass Hero Card -->
+                <div
+                    class="glass-card-dark rounded-xl p-md relative z-10 border border-white/20 bg-gradient-to-br from-inverse-surface to-[#0b1c30] shadow-[0_20px_50px_rgba(255,107,0,0.15)]">
+                    <div class="flex justify-between items-center mb-md border-b border-white/10 pb-sm">
+                        <div>
+                            <p class="font-label-md text-label-md text-white font-bold">Our Students Pass Percentage</p>
+                            <p class="font-caption text-caption text-white/60">Licensed Education Center</p>
+                        </div>
+                        <div class="relative w-14 h-14 flex items-center justify-center">
+                            <!-- Background Track Ring -->
+                            <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-white/10" cx="18" cy="18" fill="none" r="16" stroke="currentColor"
+                                    stroke-width="3"></circle>
+                            </svg>
+                            <!-- Progress Ring with Glow -->
+                            <svg class="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_8px_rgba(255,107,0,0.6)]"
+                                viewBox="0 0 36 36">
+                                <circle cx="18" cy="18" fill="none" r="16" stroke="#ff8c00" stroke-dasharray="97, 100"
+                                    stroke-linecap="round" stroke-width="3.5"></circle>
+                            </svg>
+                            <!-- Centered Text -->
+                            <span class="relative z-10 font-label-md text-[11px] font-bold text-white">97%</span>
+                        </div>
+                    </div>
+                    <div class="space-y-sm">
+                        <div class="flex items-center gap-sm bg-white/5 p-sm rounded-lg border border-white/10">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary-fixed-dim shadow-[0_0_15px_rgba(255,219,204,0.3)]">
+                                <span
+                                    class="material-symbols-outlined text-[16px] text-[20px] drop-shadow-sm">verified</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-label-md text-[12px] text-white">DBHPS Licensed</p>
+                                <p class="font-caption text-[10px] text-white/50">8 Levels of Tutoring</p>
+                            </div><span
+                                class="material-symbols-outlined text-orange-400 text-[18px] text-[20px] drop-shadow-sm">check_circle</span>
+                        </div>
+                        <div class="flex items-center gap-sm bg-white/5 p-sm rounded-lg border border-white/10">
+                            <div
+                                class="w-10 h-10 rounded-full bg-tertiary-fixed/20 flex items-center justify-center text-tertiary-fixed-dim shadow-[0_0_15px_rgba(156,240,255,0.3)]">
+                                <span
+                                    class="material-symbols-outlined text-[16px] text-[20px] drop-shadow-sm">workspace_premium</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-label-md text-[12px] text-white">Shabari-Vani Vikas</p>
+                                <p class="font-caption text-[10px] text-white/50">Licensed Certification</p>
+                            </div><span
+                                class="material-symbols-outlined text-orange-400 text-[18px] text-[20px] drop-shadow-sm">check_circle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="pt-xl pb-md bg-surface-container-lowest relative z-20" id="empowering-section">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-lg fade-in-up visible">
+                <h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-sm">
+                    Empowering Intelligence</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Our AI-driven ecosystem
+                    bridges the gap between static content and dynamic, real-time mentorship.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-lg mt-lg empowering-grid"><!-- Card 1 -->
+                <div class="tracking-card bg-white rounded-xl px-md flex flex-col items-center text-center border-t-4 border-b border-x border-[#a04100] shadow-md transition-all duration-300 min-h-[400px] justify-center py-4 hover:scale-105 hover:bg-primary/5 ease-out"
+                    style="transform: rotateX(0deg) rotateY(0deg); opacity: 1;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary-fixed/10 flex items-center justify-center mb-md pointer-events-none">
+                        <span class="material-symbols-outlined text-primary text-3xl">record_voice_over</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] text-on-surface mb-md pointer-events-none">Learn with AI
+                        Speech &amp; Quiz</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant pointer-events-none">Interactive voice
+                        assessments that test your pronunciation and retention in real-time.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="tracking-card bg-white rounded-xl px-md flex flex-col items-center text-center border-t-4 border-b border-x border-[#515f78] shadow-md transition-all duration-300 min-h-[400px] justify-center py-4 hover:scale-105 hover:bg-secondary/5 ease-out"
+                    style="transform: rotateX(0deg) rotateY(0deg); opacity: 1;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-secondary-container/30 flex items-center justify-center mb-md pointer-events-none">
+                        <span class="material-symbols-outlined text-secondary text-3xl">account_box</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] text-on-surface mb-md pointer-events-none">Dedicated Student
+                        Portal</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant pointer-events-none">A central command for
+                        your courses, assignments, and progress tracking visualizations.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="tracking-card bg-white rounded-xl px-md flex flex-col items-center text-center border-t-4 border-b border-x border-[#ba1a1a] shadow-md transition-all duration-300 min-h-[400px] justify-center py-4 hover:scale-105 hover:bg-error/5 ease-out"
+                    style="transform: rotateX(0deg) rotateY(0deg); opacity: 1;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-error-container flex items-center justify-center mb-md pointer-events-none">
+                        <span class="material-symbols-outlined text-error text-3xl">videocam</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] text-on-surface mb-md pointer-events-none">AI Cam Monitoring
+                    </h3>
+                    <p class="font-body-md text-sm text-on-surface-variant pointer-events-none">Proctored exams with
+                        intelligent motion and gaze detection to ensure academic integrity.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="tracking-card bg-white rounded-xl px-md flex flex-col items-center text-center border-t-4 border-b border-x border-[#ff6b00] shadow-md transition-all duration-300 min-h-[400px] justify-center py-4 hover:scale-105 hover:bg-primary-container/5 ease-out"
+                    style="transform: rotateX(0deg) rotateY(0deg); opacity: 1;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary-container/10 flex items-center justify-center mb-md pointer-events-none">
+                        <span class="material-symbols-outlined text-primary-container text-3xl">auto_awesome</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] text-on-surface mb-md pointer-events-none">Voice-based AI
+                        Classes</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant pointer-events-none">Dynamic lesson delivery
+                        where the curriculum responds to your verbal queries instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Courses Section -->
+    <section class="pt-md pb-xl bg-surface" id="courses">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-lg fade-in-up visible">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-[#0b1c30] mb-sm">
+                        Our Top <span class="text-[#a04100]">Hindi Courses</span></h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Explore our expert-led Hindi programs
+                        designed to take you from beginner to certified professional.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+                <!-- Course Card 1 -->
+                <div class="scroll-animate bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm hover:shadow-[0_12px_40px_rgba(10,25,47,0.08)] hover:-translate-y-1 transition-all duration-300 group visible">
+                    <div class="h-48 bg-surface-variant relative overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist composition showing diverse academic study materials" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLvmkVWeHLNz7Lp0tBNNn2GFJ-hSoG9tAwlphWhig8y1tu-OqiYHH-9sKFV3pppT7nN1ro0t4TouFq5gWgbAOoyu3ow9ij4JnSya4IpKN-1EzPXlZrVZ-7vswfFdqZUMTADJgg6fLdYE71HIgN3hGOvEF_dspbuGIi3ysZB7IYu12YqL4godcMMfFMOtwR2X8V9KaVOgbBUGyqcP50IdZWEMO60haw0MNc8syw9WUpqp7CJu4drZ4n">
+                        <div class="absolute top-sm right-sm bg-tertiary-container text-white font-label-md text-[12px] px-sm py-xs rounded-full">
+                            Comprehensive
+                        </div>
+                    </div>
+                    <div class="p-md flex flex-col h-[calc(100%-12rem)]">
+                        <h3 class="font-headline-md text-[20px] text-on-surface mb-sm leading-tight group-hover:text-primary transition-colors">
+                            DBHPS All Eight<br>Exams</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Complete preparation for all levels of the Dakshina Bharat Hindi Prachar Sabha examinations.</p>
+                        <div class="border-t border-outline-variant/20 pt-md mt-auto">
+                            <div class="grid grid-cols-2 gap-sm mb-md">
+                                <div>
+                                    <p class="font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant opacity-70">
+                                        Fee Structure</p>
+                                    <p class="font-bold text-on-surface text-[14px]">Depends On Level</p>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant opacity-70">
+                                        Duration</p>
+                                    <p class="font-bold text-on-surface text-[14px]">6 Month For a Exam</p>
+                                </div>
+                            </div>
+                            <button onclick="document.getElementById('join-modal').classList.remove('hidden');" class="w-full bg-primary hover:bg-primary-container text-white font-bold py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95">
+                                Join Program
+                            </button>
+                        </div>
+                        <div class="w-full h-1 bg-surface-container mt-sm rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[0%] group-hover:w-full transition-all duration-700 ease-in-out">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 2 -->
+                <div class="scroll-animate bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm hover:shadow-[0_12px_40px_rgba(10,25,47,0.08)] hover:-translate-y-1 transition-all duration-300 group visible" style="transition-delay: 100ms;">
+                    <div class="h-48 bg-surface-variant relative overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant modern scene depicting person speaking into microphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxyLyOHzg1RlDbmUJyvkMy5itq2oL1ujqXpN3OfkC0uYJBL2Ju1xW45KG74FM4j9R1Z6JlQlUZhPVliuCfO3VqhK1M-3OWkIQP7Y5PM3vqYDJMTi3RsQ8qnrb8Wm5UVjxWg55UncykAhbGgx0wojHTeGui3fJPBD7-m1jNpExMEfKFrwDuNVawIOH2mEuhv3sdjF4i3G27ipC1R3SDAVrW-u_uUFwdo0n5p852FjEZ6yjkJQ5FsGw4">
+                        <div class="absolute top-sm right-sm bg-secondary text-white font-label-md text-[12px] px-sm py-xs rounded-full">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-md flex flex-col h-[calc(100%-12rem)]">
+                        <h3 class="font-headline-md text-[20px] text-on-surface mb-sm leading-tight group-hover:text-primary transition-colors">
+                            Spoken Hindi<br>(5 Levels)</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">From beginner basics to fluent conversation. Structured levels to match your current proficiency.</p>
+                        <div class="border-t border-outline-variant/20 pt-md mt-auto">
+                            <div class="grid grid-cols-2 gap-sm mb-md">
+                                <div>
+                                    <p class="font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant opacity-70">
+                                        Fee Structure</p>
+                                    <p class="font-bold text-on-surface text-[14px]">Tiered Pricing</p>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant opacity-70">
+                                        Certification</p>
+                                    <p class="font-bold text-on-surface text-[14px]">Seekhly &amp; VaniVikas</p>
+                                </div>
+                            </div>
+                            <button onclick="document.getElementById('join-modal').classList.remove('hidden');" class="w-full bg-primary hover:bg-primary-container text-white font-bold py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95">
+                                Join Program
+                            </button>
+                        </div>
+                        <div class="w-full h-1 bg-surface-container mt-sm rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[0%] group-hover:w-full transition-all duration-700 ease-in-out">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 3 -->
+                <div class="scroll-animate bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm hover:shadow-[0_12px_40px_rgba(10,25,47,0.08)] hover:-translate-y-1 transition-all duration-300 group visible" style="transition-delay: 200ms;">
+                    <div class="h-48 bg-surface-variant relative overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional setting showing educator holding digital certificate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgHy6x14nJSdxKdm2jPgnofFSt-MocM8-Xneg8TEG3-vd67EjWIWbgQS3rCgzmP8H5ijwuQJV3vYXsFKl2_uTwqke6Sbflel_l5zhnm68sClc2yvkl5mSHBL_dxLRfiloB-ptfWjNl4LmrtlMKB5nmkLDJWHMR77MEe4hcseIYlTcLY8WblhrYxECjd4x2MrG2b7oijdoQw-8snpRia4DnT4oaTdHC9YUGmZrz09_GOFjgR4wOimT_">
+                        <div class="absolute top-sm right-sm bg-inverse-surface text-inverse-on-surface font-label-md text-[12px] px-sm py-xs rounded-full">
+                            Govt. Certified
+                        </div>
+                    </div>
+                    <div class="p-md flex flex-col h-[calc(100%-12rem)]">
+                        <h3 class="font-headline-md text-[20px] text-on-surface mb-sm leading-tight group-hover:text-primary transition-colors">
+                            Professional Teacher Certification</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Central govt certificate course designed specifically for passionate individuals interested in teaching.
+                        </p>
+                        <div class="border-t border-outline-variant/20 pt-md mt-auto">
+                            <div class="grid grid-cols-2 gap-sm mb-md">
+                                <div>
+                                    <p class="font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant opacity-70">
+                                        Fee Structure</p>
+                                    <p class="font-bold text-on-surface text-[14px]">Fixed Payment</p>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant opacity-70">
+                                        Ideal For</p>
+                                    <p class="font-bold text-on-surface text-[14px]">For Teaching Job</p>
+                                </div>
+                            </div>
+                            <button onclick="document.getElementById('join-modal').classList.remove('hidden');" class="w-full bg-primary hover:bg-primary-container text-white font-bold py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95">
+                                Join Program
+                            </button>
+                        </div>
+                        <div class="w-full h-1 bg-surface-container mt-sm rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[0%] group-hover:w-full transition-all duration-700 ease-in-out">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mentors Section -->
+    <section class="py-lg bg-inverse-surface relative overflow-hidden">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+            <div class="text-left md:text-center mb-lg fade-in-up visible">
+                <h2 class="font-headline-lg text-[40px] md:text-[56px] font-bold text-white leading-tight mb-xs">
+                    The Expert Mentor<br>For Your <span class="text-[#f97316]">Next Level</span>
+                </h2>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-lg">
+                <div
+                    class="scroll-animate bg-[#f4f8fc] rounded-[24px] p-md w-full md:w-[48%] flex flex-col sm:flex-row gap-md items-center sm:items-start group hover:-translate-y-1 transition-all duration-300 visible shadow-lg">
+                    <div
+                        class="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-sm flex-shrink-0 relative">
+                        <img class="w-full h-full object-cover" data-alt="Headshot of Muruga Lakshmi"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBizXZy8ZmogQ2kkQ0dsQ6piwmBqyLiaX_qw_MXTNcN911qEV2Pj4GoL3si48VBNmIb6py2ACPcVXsX1oueSdFPbgSisZOAlVDod2Wf6lnm8QUlQ8ff8Yr1jZHcoquxFeQqYo1a3tWvEzQL7pLmyy8_o7SXKY9gBSzO396Gun2BCu_kBDvWbBRbvzfe_IaInab1QIif5ZOsP9IEyzAwxIf3-TlMVr1d3VdZFU2VvhqsJu01k8-kMjfj">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="font-headline-md text-[20px] text-[#0b1c30] font-bold mb-1">Muruga Lakshmi (RBB)</h3>
+                        <p class="font-label-md text-[14px] text-[#a04100] font-bold mb-3">DBHPS Exam Tutor</p>
+
+                        <div
+                            class="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 mb-3 text-slate-500 font-label-md text-[13px]">
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-[16px]">verified</span> 15+ Years Exp</div>
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-[16px]">group</span> 500+ Students</div>
+                        </div>
+
+                        <p class="font-body-md text-[14px] text-slate-600 italic leading-snug">"Language is not just
+                            words; it's the gateway to a new culture and professional world."</p>
+                    </div>
+                </div>
+                <div class="scroll-animate bg-[#f4f8fc] rounded-[24px] p-md w-full md:w-[48%] flex flex-col sm:flex-row gap-md items-center sm:items-start group hover:-translate-y-1 transition-all duration-300 visible shadow-lg"
+                    style="transition-delay: 150ms;">
+                    <div
+                        class="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-sm flex-shrink-0 relative">
+                        <img class="w-full h-full object-cover" data-alt="Headshot of Mari Muthu"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB0n2lFXlJga4oY20_xEaIDZNFdB0SxOtAYTZIEJFxz_uSizr-OplgJ3Jh5yB9HbqDUrPwqVQNg1zAFoSQ5qpvRM2Ely9hs_-w5zpVy8PwuLdyFWWZ6PAr-B3IjgEuBEFFim5OxKKpQTkP1GmGVolG4GSchITt_6Eo2w7B7X4RtSU4RWFCCAvmWbq1CreVkV0xFhaMVNxk3Gk2dwgODFhPb7Pn_4r3n1HznpW48Nmy6JywrtAZwqdY">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="font-headline-md text-[20px] text-[#0b1c30] font-bold mb-1">Mari Muthu (Ex.CRPF)</h3>
+                        <p class="font-label-md text-[14px] text-[#a04100] font-bold mb-3">Spoken Hindi Expert</p>
+
+                        <div
+                            class="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 mb-3 text-slate-500 font-label-md text-[13px]">
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-[16px]">language</span> 5+ Languages</div>
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-[16px]">military_tech</span> Ex-Defense</div>
+                        </div>
+
+                        <p class="font-body-md text-[14px] text-slate-600 italic leading-snug">"Discipline and phonetic
+                            precision are the two pillars of mastering any language quickly."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Apps Section -->
+    <section class="py-8 relative overflow-hidden bg-white">
+        
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+            <div class="text-center mb-6 fade-in-up">
+                <h2 class="font-headline-md text-headline-md-mobile md:text-[32px] font-bold text-[#0b1c30] mb-2">Learn Anywhere, Anytime</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Take your Hindi learning journey on the go with our dedicated web applications designed for seamless learning.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto fade-in-up">
+                <!-- Seekhly Learn -->
+                <div class="bg-gradient-to-r from-[#8B5CF6] to-[#3B82F6] rounded-[24px] p-4 md:p-5 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-transform duration-300">
+                    <h3 class="font-headline-md text-[22px] font-bold text-white mb-1 tracking-wide">Seekhly Learn</h3>
+                    <p class="font-body-md text-[13px] text-white/90 mb-3 max-w-xs">All In One App For Learning Hindi</p>
+                    <a href="https://app.seekhly.com" target="_blank" class="mt-auto bg-[#1f2937] hover:bg-black text-white font-label-md text-[14px] px-6 py-2 rounded-lg transition-all duration-300 shadow-md flex items-center justify-center gap-2 w-full max-w-[200px]">
+                        <span class="material-symbols-outlined text-[18px]">download</span>
+                        Download Now
+                    </a>
+                </div>
+
+                <!-- Seekhly Speak -->
+                <div class="bg-[#121212] rounded-[24px] p-4 md:p-5 flex flex-col items-center text-center shadow-[0_0_20px_rgba(255,0,0,0.4)] border border-red-500/20 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+                    <h3 class="font-headline-md text-[20px] md:text-[22px] font-black italic tracking-widest mb-2" style="color: #FFEA00; text-shadow: -2px -2px 0 #FF0000, 2px -2px 0 #FF0000, -2px 2px 0 #FF0000, 2px 2px 0 #FF0000;">SEEKHLY SPEAK</h3>
+                    <p class="font-body-md text-[11px] text-white/80 mb-3 max-w-xs uppercase tracking-widest leading-relaxed">PLATFORM FOR READING AND SPOKEN TRAINING</p>
+                    <button class="mt-auto bg-[#121212] border border-[#FFEA00] text-[#FFEA00] font-label-md text-[14px] px-6 py-2 rounded-lg shadow-[0_0_15px_rgba(255,234,0,0.3)] flex items-center justify-center gap-2 cursor-not-allowed transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,234,0,0.5)] w-full max-w-[200px]">
+                        <span class="material-symbols-outlined text-[18px]">schedule</span>
+                        Coming Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase -->
+    <section class="py-xl bg-inverse-surface text-inverse-on-surface overflow-hidden relative">
+        <div
+            class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3">
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+            <div class="fade-in-up visible">
+
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-md">Your Portable
+                    <br>Learning Command Center
+                </h2>
+                <div class="space-y-lg mt-lg"><!-- Point 1 -->
+                    <div class="scroll-animate flex gap-md group visible">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-fixed/20 transition-colors border border-white/10">
+                            <span class="material-symbols-outlined text-primary-fixed-dim"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">video_library</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-[18px] text-white mb-xs">Access Recorded Classes</h4>
+                            <p class="font-body-md text-secondary-fixed-dim">Never miss a beat. Watch every session
+                                on-demand with intelligent bookmarking and key concept summaries.</p>
+                        </div>
+                    </div>
+                    <!-- Point 2 -->
+                    <div class="scroll-animate flex gap-md group visible" style="transition-delay: 100ms;">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-tertiary-fixed/20 transition-colors border border-white/10">
+                            <span class="material-symbols-outlined text-tertiary-fixed-dim"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">videocam</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-[18px] text-white mb-xs">Integrated AI Monitoring</h4>
+                            <p class="font-body-md text-secondary-fixed-dim">Maintain focus with ambient AI cam features
+                                that gently nudge you back into the flow state when you're distracted.</p>
+                        </div>
+                    </div>
+                    <!-- Point 3 -->
+                    <div class="scroll-animate flex gap-md group visible" style="transition-delay: 200ms;">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-fixed/20 transition-colors border border-white/10">
+                            <span class="material-symbols-outlined text-primary-fixed-dim"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">monitoring</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-[18px] text-white mb-xs">Real-time Performance Metrics</h4>
+                            <p class="font-body-md text-secondary-fixed-dim">View your grades, test history, and AI
+                                speech accuracy trends in one unified dashboard.</p>
+                        </div>
+                    </div>
+                    <!-- Point 4 -->
+                    <div class="scroll-animate flex gap-md group visible" style="transition-delay: 300ms;">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-tertiary-fixed/20 transition-colors border border-white/10">
+                            <span class="material-symbols-outlined text-tertiary-fixed-dim"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">person</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-[18px] text-white mb-xs">Live classes one to one sessions
+                            </h4>
+                            <p class="font-body-md text-secondary-fixed-dim">Personalized learning with direct access to
+                                expert mentors for tailored guidance.</p>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="mt-lg bg-white text-on-surface font-label-md text-label-md px-xl py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-lg hover:bg-surface-container flex items-center gap-sm">
+                    <span class="material-symbols-outlined">download</span>
+                    Download the App
+                </button>
+            </div>
+            <div class="relative w-full h-[600px] flex items-center fade-in-up stagger-1 visible">
+                <div
+                    class="w-full overflow-x-auto no-scrollbar snap-x snap-mandatory flex gap-md pb-8 px-4 py-8 items-center h-full relative z-10">
+                    <div class="scroll-animate snap-center shrink-0 visible group">
+                        <div
+                            class="phone-mockup w-[280px] h-[580px] bg-white rounded-[32px] border-8 border-gray-900 shadow-2xl overflow-hidden relative animate-float">
+                            <img class="w-full h-full object-cover" data-alt="Student Dashboard"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqsOYlFSiKeGx4wVEiQM6qQ0na5D8sqW8Q8eFh5VQnGmzGQjFCD1BMgBPuHudXQzAoi5F6kmSwX7RrApUi96R4xXGLf-P3I-GjPq_t1LdfCKkrLoZO0hPThDCW_tqsAwN_kUTkEO3tCCJ8IiDTpxLwYXJ6_WgtzqYvUTYpM_pa4wFw9YR4kqUWxfu4CavKllPxy_pj9Rdm2MwzBcvvFzWZlW4E_3YGYkP4CBSOinDFYMect6nOrNyGhuAHu0EtuEga9Q">
+                        </div>
+                    </div>
+                    <div class="scroll-animate snap-center shrink-0 visible group" style="transition-delay: 200ms;">
+                        <div
+                            class="phone-mockup w-[280px] h-[580px] bg-white rounded-[32px] border-8 border-gray-900 shadow-2xl overflow-hidden relative animate-float-delay-1">
+                            <img class="w-full h-full object-cover" data-alt="Proctored Quiz"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB-1KlJ_GVTAl07HnSnB--ynrkmTQMLoLht0deK87A6r0e28YTKG1mhrGyD20cIZtJgTyWCTrzlUpgCnxrPSbcNTNHipcZ_-WcG2URbujKHn0lwg6wKyaqhZ3cS7P6j1FGIYNNpVHDvQ9V5mvT-tyBLGWkHV5Ak0l4dxw6kE0fhZYeOlVgIkmbHjS_3Xga4D4M_FmETWziDo8MgPHPBo6OZX2nqfpqqeuAx-8-G0wFTfZf0jCryzSIsIU117aOTWjmJQ">
+                        </div>
+                    </div>
+                    <div class="scroll-animate snap-center shrink-0 visible group" style="transition-delay: 400ms;">
+                        <div
+                            class="phone-mockup w-[280px] h-[580px] bg-white rounded-[32px] border-8 border-gray-900 shadow-2xl overflow-hidden relative animate-float-delay-2">
+                            <img class="w-full h-full object-cover" data-alt="Assignments"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlYX8mM-vSud0nHBR7agrtZk1FLpO4w5IZmoAxtxFwgOstiP0xjXAnEp1kRMAPzUMRHEk_uUSqhlNpNq58O3HkG2T-8kgty0ph1YKuHgoXyrtWEW4ls7oz5CyQUYQaGoZ1OmYBlVQ78kMGpY_aBBb82IXLlP8B8fvARDD08QMEBpX08zrm8ZjvRPj4nES7zhpC6aVR6yT0C1IXbh1t6Vqm-MNTWS4m2x7AaWkr3GqJdg2nVv6K5_ka-h01CjNdyecHPg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Key Selling Points (Bento Grid) -->
+    <section class="py-xl bg-surface-container-lowest relative z-20">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-lg fade-in-up visible">
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Why
+                    Choose Seekhly?</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Experience an educational
+                    ecosystem built for modern learners, blending advanced technology with proven pedagogy.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md auto-rows-[250px]">
+                <!-- Premium Learning -->
+                <div
+                    class="glass-card md:col-span-2 rounded-xl p-md flex flex-col justify-between overflow-hidden relative group fade-in-up visible bg-primary-fixed shadow-lg">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10 w-full max-w-[60%]">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-md border border-outline-variant/30 shadow-sm">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">workspace_premium</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Premium Learning Experience
+                        </h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Immersive content, high-quality
+                            video production, and expertly crafted curriculum designed by industry leaders.</p>
+                    </div>
+                    <div class="absolute bottom-0 right-0 w-1/2 h-full opacity-10 pointer-events-none"
+                        style="background-image: radial-gradient(circle at center, #a04100 1px, transparent 1px); background-size: 16px 16px;">
+                    </div>
+                </div>
+                <!-- Easily Accessible -->
+                <div
+                    class="glass-card rounded-xl p-md flex flex-col justify-between overflow-hidden relative group fade-in-up stagger-1 visible bg-surface-variant shadow-md">
+                    <div class="relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-md border border-outline-variant/30 shadow-sm">
+                            <span class="material-symbols-outlined text-tertiary-container"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">devices</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Easily Accessible</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Learn anywhere, anytime. Seamless
+                            transition between web and mobile.</p>
+                    </div>
+                </div>
+                <!-- Fun Learning -->
+                <div
+                    class="glass-card rounded-xl p-md flex flex-col justify-between overflow-hidden relative group fade-in-up stagger-2 visible bg-tertiary-container shadow-md">
+                    <div class="relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-md border border-outline-variant/30 shadow-sm">
+                            <span class="material-symbols-outlined text-secondary"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">emoji_events</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Fun Learning Experience</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Gamified elements, interactive
+                            quizzes, and peer challenges keep you motivated.</p>
+                    </div>
+                </div>
+                <!-- Learn with AI -->
+                <div
+                    class="glass-card md:col-span-2 rounded-xl p-md flex flex-col justify-between overflow-hidden relative group bg-inverse-surface text-inverse-on-surface fade-in-up stagger-3 visible border-primary/30">
+                    <div class="absolute inset-0 bg-gradient-to-br from-inverse-surface to-on-surface opacity-90 z-0">
+                    </div>
+                    <div class="relative z-10 flex h-full items-center">
+                        <div class="w-1/2 pr-md">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-md backdrop-blur-sm border border-white/20">
+                                <span class="material-symbols-outlined text-primary-fixed-dim"
+                                    style="font-variation-settings: &quot;FILL&quot; 1;">record_voice_over</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-white mb-xs">Learn with AI Speech &amp;
+                                Quiz</h3>
+                            <p class="font-body-md text-body-md text-secondary-fixed-dim">Real-time pronunciation
+                                feedback and adaptive quizzes powered by advanced AI.</p>
+                        </div>
+                        <div class="w-1/2 h-full flex items-center justify-center relative">
+                            <div
+                                class="w-full max-w-[200px] aspect-square rounded-full border border-primary-fixed/30 flex items-center justify-center relative">
+                                <div class="absolute inset-0 rounded-full border-2 border-primary-fixed-dim border-dashed animate-spin"
+                                    style="animation-duration: 10s;"></div>
+                                <div
+                                    class="w-3/4 h-3/4 rounded-full bg-primary-fixed/10 flex items-center justify-center backdrop-blur-md">
+                                    <span class="material-symbols-outlined text-4xl text-primary-fixed">mic_none</span>
+                                </div>
+                                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 h-6 items-end">
+                                    <div class="w-1 bg-primary-fixed rounded-t-full h-full animate-pulse"></div>
+                                    <div class="w-1 bg-primary-fixed rounded-t-full h-1/2 animate-pulse"
+                                        style="animation-delay: 0.1s;"></div>
+                                    <div class="w-1 bg-primary-fixed rounded-t-full h-3/4 animate-pulse"
+                                        style="animation-delay: 0.2s;"></div>
+                                    <div class="w-1 bg-primary-fixed rounded-t-full h-1/3 animate-pulse"
+                                        style="animation-delay: 0.3s;"></div>
+                                    <div class="w-1 bg-primary-fixed rounded-t-full h-full animate-pulse"
+                                        style="animation-delay: 0.4s;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-[#0b1c30] w-full pt-12 pb-8" itemscope itemtype="https://schema.org/EducationalOrganization">
+        <!-- Schema Markup hidden meta tags -->
+        <meta itemprop="name" content="Seekhly EdTech">
+        <meta itemprop="description" content="Seekhly provides interactive Hindi learning, DBHPS exam coaching, and Spoken Hindi courses with AI-powered tools.">
+        <meta itemprop="url" content="https://seekhly.com">
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+            <div class="col-span-1 mb-8 md:mb-0">
+                <a class="font-headline-md text-headline-md font-bold text-primary-fixed dark:text-primary mb-2 inline-block"
+                    href="index.html">Seekhly</a>
+                <p class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant mt-2 leading-relaxed">
+                    Empowering futures through smart, accessible, and interactive Hindi learning experiences for students, teachers, and professionals.
+                </p>
+                <div class="mt-4 flex flex-col space-y-2">
+                    <a href="mailto:info@seekhly.com" class="font-body-md text-[14px] text-surface-variant hover:text-white transition-colors flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">mail</span> info@seekhly.com
+                    </a>
+                </div>
+            </div>
+            <div class="col-span-1 flex flex-col space-y-3">
+                <h4 class="font-headline-sm text-[18px] text-primary-fixed dark:text-primary mb-2">Explore</h4>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="index.html">Home</a>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="about.html">About Us</a>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="index.html#courses">Courses & Programs</a>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="career.html">Careers</a>
+            </div>
+            <div class="col-span-1 flex flex-col space-y-3">
+                <h4 class="font-headline-sm text-[18px] text-primary-fixed dark:text-primary mb-2">Legal & Support</h4>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="contact.html">Contact Us</a>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="#">Terms of Service</a>
+                <a class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant hover:text-white transition-colors" href="#">Sitemap</a>
+            </div>
+            <div class="col-span-1 flex flex-col">
+                <h4 class="font-headline-sm text-[18px] text-primary-fixed dark:text-primary mb-3">Stay Updated</h4>
+                <p class="font-body-md text-[13px] text-surface-variant dark:text-on-surface-variant mb-3">Subscribe to our newsletter for learning tips and updates.</p>
+                <div class="flex mb-4">
+                    <input aria-label="Email address for newsletter" class="bg-surface-container-lowest text-on-surface border border-outline-variant rounded-l-md px-3 py-2 w-full font-body-md focus:outline-none focus:border-primary" placeholder="Email address" type="email">
+                    <button aria-label="Subscribe" class="bg-primary text-white px-3 py-2 rounded-r-md hover:bg-primary-container transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">send</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-4 border-t border-surface-variant/20 dark:border-outline/20 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="font-caption text-[12px] text-surface-variant dark:text-on-surface-variant">
+                    © 2024 Seekhly EdTech. All rights reserved.
+                </p>
+                <!-- Social Links for AEO / Branding -->
+                <div class="flex gap-4">
+                    <a href="#" aria-label="Facebook" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">public</span></a>
+                    <a href="#" aria-label="Twitter" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></a>
+                    <a href="#" aria-label="LinkedIn" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">work</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion) {
+                const observerOptions = { root: null, threshold: 0.15 };
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                document.querySelectorAll('.fade-in-up, .scroll-animate').forEach(el => observer.observe(el));
+            } else {
+                document.querySelectorAll('.fade-in-up, .scroll-animate').forEach(el => {
+                    el.classList.add('visible');
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+
+            // Custom Cursor Tracking Logic for "Empowering Intelligence" Cards
+            const empoweringSection = document.getElementById('empowering-section');
+            const trackingCards = document.querySelectorAll('.tracking-card');
+
+            if (empoweringSection && trackingCards.length > 0) {
+                const maxRotation = 8; // Max rotation in degrees
+
+                const handleMouseMove = (e) => {
+                    const mouseX = e.clientX;
+                    const mouseY = e.clientY;
+
+                    trackingCards.forEach(card => {
+                        const rect = card.getBoundingClientRect();
+                        const cardCenterX = rect.left + rect.width / 2;
+                        const cardCenterY = rect.top + rect.height / 2;
+
+                        // Calculate distance and angle from card center to mouse
+                        const deltaX = mouseX - cardCenterX;
+                        const deltaY = mouseY - cardCenterY;
+
+                        // Normalize the delta to calculate rotation (limit to maxRotation)
+                        // The further away the mouse, the stronger the rotation up to the max
+                        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+                        // Simple dampening based on distance
+                        const dampening = Math.min(distance / 500, 1);
+
+                        // Calculate rotation angles
+                        const rotX = (deltaY / rect.height) * maxRotation * dampening * -1;
+                        const rotY = (deltaX / rect.width) * maxRotation * dampening;
+
+                        // Apply transform
+                        card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+                    });
+                };
+
+                const handleMouseLeave = () => {
+                    trackingCards.forEach(card => {
+                        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                    });
+                };
+
+                // Add hover effects for the active card vs other cards
+                trackingCards.forEach(activeCard => {
+                    activeCard.addEventListener('mouseenter', () => {
+                        trackingCards.forEach(card => {
+                            if (card === activeCard) {
+                                card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+                                card.style.zIndex = '10';
+                            } else {
+                                card.style.opacity = '0.9';
+                            }
+                        });
+                    });
+
+                    activeCard.addEventListener('mouseleave', () => {
+                        trackingCards.forEach(card => {
+                            card.style.boxShadow = '';
+                            card.style.zIndex = '';
+                            card.style.opacity = '1';
+                        });
+                    });
+                });
+
+                empoweringSection.addEventListener('mousemove', handleMouseMove);
+                empoweringSection.addEventListener('mouseleave', handleMouseLeave);
+            }
+        });
+
+        // WebGL Shader component logic
+        class WebGLShader extends HTMLElement {
+            connectedCallback() {
+                const src = this.getAttribute('src');
+                if (src) {
+                    this.initShader(src);
+                }
+            }
+
+            async initShader(fragmentSource) {
+                const canvas = document.createElement('canvas');
+                canvas.className = 'w-full h-full block';
+                this.appendChild(canvas);
+
+                const gl = canvas.getContext('webgl');
+                if (!gl) return;
+
+                const vertSource = `
+                attribute vec2 position;
+                varying vec2 v_texCoord;
+                void main() {
+                    v_texCoord = position * 0.5 + 0.5;
+                    v_texCoord.y = 1.0 - v_texCoord.y;
+                    gl_Position = vec4(position, 0.0, 1.0);
+                }
+            `;
+
+                function createShader(gl, type, source) {
+                    const shader = gl.createShader(type);
+                    gl.shaderSource(shader, source);
+                    gl.compileShader(shader);
+                    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                        console.error(gl.getShaderInfoLog(shader));
+                        gl.deleteShader(shader);
+                        return null;
+                    }
+                    return shader;
+                }
+
+                const program = gl.createProgram();
+                gl.attachShader(program, createShader(gl, gl.VERTEX_SHADER, vertSource));
+                gl.attachShader(program, createShader(gl, gl.FRAGMENT_SHADER, fragmentSource));
+                gl.linkProgram(program);
+                if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+                    console.error(gl.getProgramInfoLog(program));
+                    return;
+                }
+                gl.useProgram(program);
+
+                const buffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+
+                const positionLocation = gl.getAttribLocation(program, "position");
+                gl.enableVertexAttribArray(positionLocation);
+                gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+                const timeLoc = gl.getUniformLocation(program, "u_time");
+                const resLoc = gl.getUniformLocation(program, "u_resolution");
+                const mouseLoc = gl.getUniformLocation(program, "u_mouse");
+
+                let mouseX = 0, mouseY = 0;
+                const parent = this.closest('header') || window;
+                parent.addEventListener('mousemove', e => {
+                    const rect = canvas.getBoundingClientRect();
+                    mouseX = e.clientX - rect.left;
+                    mouseY = e.clientY - rect.top;
+                });
+
+                const render = (time) => {
+                    const width = canvas.clientWidth;
+                    const height = canvas.clientHeight;
+                    if (canvas.width !== width || canvas.height !== height) {
+                        canvas.width = width;
+                        canvas.height = height;
+                        gl.viewport(0, 0, width, height);
+                    }
+
+                    gl.uniform1f(timeLoc, time * 0.001);
+                    gl.uniform2f(resLoc, width, height);
+                    gl.uniform2f(mouseLoc, mouseX, height - mouseY);
+                    gl.drawArrays(gl.TRIANGLES, 0, 6);
+                    requestAnimationFrame(render);
+                };
+                requestAnimationFrame(render);
+            }
+        }
+        customElements.define('webgl-shader', WebGLShader);
+    </script>
+
+
+
+<!-- Join Now Modal -->
+<div id="join-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-background/80 backdrop-blur-sm modal-backdrop transition-opacity"></div>
+    
+    <!-- Modal Content -->
+    <div class="relative bg-surface-container-lowest border border-outline-variant/30 rounded-2xl p-6 md:p-8 w-full max-w-lg shadow-[0_20px_60px_rgba(10,25,47,0.15)] fade-in-up">
+        <button id="close-modal" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-surface-variant text-on-surface-variant hover:bg-outline-variant/30 transition-colors">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+        
+        <div id="join-form-container">
+            <h3 class="font-headline-md text-[24px] font-bold text-on-background mb-2">Join Seekhly</h3>
+            <p class="font-body-md text-on-surface-variant mb-6 text-[14px]">Fill out the details below and our team will get in touch with you shortly.</p>
+            
+            <form id="join-form" action="https://formspree.io/f/xwvgewrp" method="POST" class="space-y-4 max-h-[70vh] overflow-y-auto pr-2 custom-scrollbar">
+                <!-- Name & Age -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="md:col-span-2 space-y-1">
+                        <label class="font-label-md text-[12px] text-on-surface-variant">Full Name *</label>
+                        <input type="text" name="name" required class="w-full bg-surface-variant/50 border border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="font-label-md text-[12px] text-on-surface-variant">Age *</label>
+                        <input type="number" name="age" required min="1" class="w-full bg-surface-variant/50 border border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md">
+                    </div>
+                </div>
+
+                <!-- Contact & City -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="font-label-md text-[12px] text-on-surface-variant">Contact Number *</label>
+                        <input type="tel" name="contact_number" required class="w-full bg-surface-variant/50 border border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="font-label-md text-[12px] text-on-surface-variant">Location/City *</label>
+                        <input type="text" name="location" required class="w-full bg-surface-variant/50 border border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md">
+                    </div>
+                </div>
+
+                <!-- New to Hindi -->
+                <div class="space-y-2 pt-2">
+                    <label class="font-label-md text-[13px] text-on-background">Are you new to learning Hindi?</label>
+                    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="new_hindi" value="Yes, I'm a beginner" class="text-primary focus:ring-primary h-4 w-4">
+                            <span class="font-body-md text-[14px] text-on-surface-variant">Yes, I'm a beginner</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="new_hindi" value="No, I Have To learn" class="text-primary focus:ring-primary h-4 w-4" checked>
+                            <span class="font-body-md text-[14px] text-on-surface-variant">No, I Have To learn</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Course Selection -->
+                <div class="space-y-2 pt-2">
+                    <label class="font-label-md text-[13px] text-on-background">Which courses are you interested in? (Select multiple)</label>
+                    <div class="space-y-1">
+                        <label class="flex items-center gap-3 cursor-pointer p-2 rounded-lg hover:bg-surface-variant/50 transition-colors border border-transparent hover:border-outline-variant/20">
+                            <input type="checkbox" id="dbhps-checkbox" name="courses" value="DBHPS (Written Exam)" class="rounded text-primary focus:ring-primary h-4 w-4">
+                            <span class="font-body-md text-[14px] text-on-surface">DBHPS (Written Exam)</span>
+                        </label>
+                        
+                        <!-- Dropdown for DBHPS Exams, initially hidden -->
+                        <div id="dbhps-dropdown-container" class="hidden pl-8 pr-2 mt-1 mb-2">
+                            <select id="dbhps-exam" name="dbhps_exam_level" class="w-full bg-surface-variant/50 border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-[13px]">
+                                <option value="" disabled selected>Select DBHPS Exam Level</option>
+                                <option value="PRATHAMIC">PRATHAMIC</option>
+                                <option value="MADHYAMA">MADHYAMA</option>
+                                <option value="RASHTRABASHA">RASHTRABASHA</option>
+                                <option value="PRAVESHIKA">PRAVESHIKA</option>
+                                <option value="VISHARAD POORVARDH">VISHARAD POORVARDH</option>
+                                <option value="VISHARAD UTTARARDH">VISHARAD UTTARARDH</option>
+                                <option value="PRAVEEN POORVARDH">PRAVEEN POORVARDH</option>
+                                <option value="PRAVEEN UTTARARDH">PRAVEEN UTTARARDH</option>
+                            </select>
+                        </div>
+
+                        <label class="flex items-center gap-3 cursor-pointer p-2 rounded-lg hover:bg-surface-variant/50 transition-colors border border-transparent hover:border-outline-variant/20">
+                            <input type="checkbox" name="courses" value="Course For Teachers" class="rounded text-primary focus:ring-primary h-4 w-4">
+                            <span class="font-body-md text-[14px] text-on-surface">Course For Teachers</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer p-2 rounded-lg hover:bg-surface-variant/50 transition-colors border border-transparent hover:border-outline-variant/20">
+                            <input type="checkbox" name="courses" value="Spoken Hindi Training" class="rounded text-primary focus:ring-primary h-4 w-4">
+                            <span class="font-body-md text-[14px] text-on-surface">Spoken Hindi Training</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full mt-6 bg-gradient-primary text-white font-bold py-3.5 rounded-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                    <span>Submit Application</span>
+                </button>
+                <p id="form-error" class="hidden text-red-500 font-body-md text-[13px] mt-2 text-center"></p>
+            </form>
+        </div>
+        
+        <!-- Success State (Initially Hidden) -->
+        <div id="join-success" class="hidden flex-col items-center justify-center py-8 text-center fade-in-up">
+            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-green-500 text-[32px]">check_circle</span>
+            </div>
+            <h3 class="font-headline-md text-[24px] font-bold text-on-background mb-2">Application Received!</h3>
+            <p class="font-body-md text-on-surface-variant text-[14px]">Thank you for your interest in Seekhly. Our team will review your application and contact you shortly.</p>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import { saveEnquiryToFirestore } from "./src/enquiry-handler.js";
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('join-modal');
+        const backdrops = document.querySelectorAll('.modal-backdrop');
+        const closeBtn = document.getElementById('close-modal');
+        const form = document.getElementById('join-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formError = document.getElementById('form-error');
+        const formContainer = document.getElementById('join-form-container');
+        const successContainer = document.getElementById('join-success');
+        
+        // Find all "Join Now" buttons
+        const joinBtns = Array.from(document.querySelectorAll('button, a')).filter(btn => btn.textContent.includes('Join Now') || btn.textContent.includes('Join Program'));
+        
+        joinBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.remove('hidden');
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            // Optional: reset form state on close
+            setTimeout(() => {
+                form.reset();
+                formContainer.classList.remove('hidden');
+                successContainer.classList.remove('flex');
+                successContainer.classList.add('hidden');
+                formError.classList.add('hidden');
+                document.getElementById('dbhps-dropdown-container').classList.add('hidden');
+            }, 300);
+        };
+
+        if(closeBtn) closeBtn.addEventListener('click', closeModal);
+        backdrops.forEach(bd => bd.addEventListener('click', closeModal));
+
+        // DBHPS Dropdown Logic
+        const dbhpsCheckbox = document.getElementById('dbhps-checkbox');
+        const dbhpsDropdownContainer = document.getElementById('dbhps-dropdown-container');
+
+        if(dbhpsCheckbox && dbhpsDropdownContainer) {
+            dbhpsCheckbox.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    dbhpsDropdownContainer.classList.remove('hidden');
+                } else {
+                    dbhpsDropdownContainer.classList.add('hidden');
+                }
+            });
+        }
+
+        // AJAX Form Submission
+        if(form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Set loading state
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> <span>Submitting...</span>';
+                submitBtn.disabled = true;
+                formError.classList.add('hidden');
+
+                const data = new FormData(form);
+                
+                try {
+                    // Dual-write: Save to Firestore first
+                    try {
+                        await saveEnquiryToFirestore(data);
+                    } catch(err) {
+                        console.error("Firestore save failed, but proceeding with Formspree:", err);
+                    }
+                    
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Show success state
+                        formContainer.classList.add('hidden');
+                        successContainer.classList.remove('hidden');
+                        successContainer.classList.add('flex');
+                    } else {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Oops! There was a problem submitting your form');
+                    }
+                } catch (error) {
+                    formError.textContent = error.message;
+                    formError.classList.remove('hidden');
+                } finally {
+                    // Reset button state
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+    });
+</script>
+
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-nav-overlay" class="fixed inset-0 bg-background/95 backdrop-blur-xl z-[150] hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
+        <button id="close-mobile-nav" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-surface-variant text-on-surface-variant hover:bg-outline-variant/30 transition-colors">
+            <span class="material-symbols-outlined text-[28px]">close</span>
+        </button>
+        
+        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="index.html#courses">Courses</a>
+        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="about.html">About</a>
+        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="career.html">Careers</a>
+        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="contact.html">Contact</a>
+        <button class="bg-primary hover:bg-primary-container text-white font-label-md px-8 py-3 rounded-full transition-all duration-300 shadow-md">
+            Join Now
+        </button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-mobile-nav');
+            const overlay = document.getElementById('mobile-nav-overlay');
+            const mobileLinks = overlay ? overlay.querySelectorAll('a, button') : [];
+
+            if (mobileBtn && closeBtn && overlay) {
+                mobileBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    overlay.classList.remove('hidden');
+                    // slight delay to allow display:block to apply before animating opacity
+                    setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+                });
+
+                const closeMenu = () => {
+                    overlay.classList.add('opacity-0');
+                    setTimeout(() => overlay.classList.add('hidden'), 300);
+                };
+
+                closeBtn.addEventListener('click', closeMenu);
+                mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Seekhly - Manage Careers &amp; Job Openings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d6e3ff",
+                        "outline-variant": "#e2bfb0",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-surface": "#213145",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#55637d",
+                        "inverse-primary": "#ffb693",
+                        "surface-container": "#e5eeff",
+                        "on-background": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#00a8bb",
+                        "secondary": "#515f78",
+                        "on-surface": "#0b1c30",
+                        "secondary-container": "#d2e0fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#001f24",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary": "#a04100",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9cf0ff",
+                        "tertiary": "#006875",
+                        "surface-dim": "#cbdbf5",
+                        "primary-container": "#ff6b00",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "on-tertiary-container": "#00373e",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5a4136",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "outline": "#8e7164",
+                        "primary-fixed": "#ffdbcc",
+                        "surface-tint": "#a04100",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-secondary-fixed": "#0d1c32",
+                        "on-primary-container": "#572000",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-panel {
+                @apply bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/30 shadow-[0px_4px_20px_rgba(10,25,47,0.05)];
+            }
+            .input-field {
+                @apply w-full bg-surface-container-lowest border border-outline/30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50;
+            }
+            .btn-primary {
+                @apply bg-gradient-to-b from-primary-container to-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md transition-all hover:shadow-[0px_4px_12px_rgba(255,107,0,0.3)] hover:-translate-y-0.5 active:translate-y-0;
+            }
+            .btn-secondary {
+                @apply border border-secondary text-secondary hover:bg-secondary-container hover:text-on-secondary-container px-6 py-3 rounded-lg font-label-md text-label-md transition-all;
+            }
+        }
+    </style>
+<script type="module" src="/admin/auth-guard.js"></script>
+</head>
+<body class="bg-background min-h-screen text-on-background font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 sticky top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline/30 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-lg">
+
+
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex relative group">
+
+
+</div>
+
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Header Section -->
+<div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-xs">Careers &amp; Openings</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage your organization's job listings. Create new opportunities and track active roles across all departments.</p>
+</div>
+<div class="flex gap-sm">
+<button class="btn-secondary flex items-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                    Export List
+                </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Create Job Form -->
+<div class="lg:col-span-7 glass-panel rounded-xl p-md relative overflow-hidden">
+<!-- Subtle background decoration -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-[28px]">add_circle</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Create Job Opening</h2>
+</div>
+<form class="space-y-md relative z-10" onsubmit="event.preventDefault();">
+<!-- Title & Dept Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Job Title</label>
+<input class="input-field" placeholder="e.g. Senior Frontend Engineer" type="text">
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Department</label>
+<div class="relative">
+<select class="input-field appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Select Department</option>
+<option value="curriculum">Curriculum</option>
+<option value="engineering">Engineering</option>
+<option value="media">Media</option>
+<option value="marketing">Marketing</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Location & Type Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Location Type</label>
+<div class="relative">
+<select class="input-field appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Select Location Type</option>
+<option value="remote">Remote</option>
+<option value="hybrid">Hybrid</option>
+<option value="onsite">On-site</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Employment Type</label>
+<div class="relative">
+<select class="input-field appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Select Type</option>
+<option value="fulltime">Full-time</option>
+<option value="parttime">Part-time</option>
+<option value="contract">Contract</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Job Description</label>
+<div class="border border-outline/30 rounded-lg overflow-hidden bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all">
+<!-- Simple Rich Text Toolbar -->
+<div class="bg-surface-container border-b border-outline/20 p-2 flex gap-2">
+<button class="p-1.5 hover:bg-surface-variant rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-1.5 hover:bg-surface-variant rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<div class="w-px h-6 bg-outline-variant/30 self-center mx-1"></div>
+<button class="p-1.5 hover:bg-surface-variant rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<button class="p-1.5 hover:bg-surface-variant rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">link</span></button>
+</div>
+<textarea class="w-full p-4 min-h-[200px] border-none focus:ring-0 resize-y font-body-md text-body-md text-on-surface bg-transparent placeholder:text-on-surface-variant/50" placeholder="Describe the role, responsibilities, and requirements..."></textarea>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex justify-end gap-sm pt-sm">
+<button class="btn-secondary" type="button">Save Draft</button>
+<button class="btn-primary flex items-center gap-2" type="submit">
+                            Publish Opening
+                            <span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Right Column: Active Openings List -->
+<div class="lg:col-span-5 flex flex-col gap-md">
+<!-- Status Summary Card -->
+<div class="glass-panel rounded-xl p-md flex items-center justify-between group hover:border-primary/30 transition-all duration-300">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Total Active Roles</p>
+<h3 class="font-headline-xl text-headline-xl text-on-surface">12</h3>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary group-hover:bg-primary-container group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">work</span>
+</div>
+</div>
+<!-- Listings Container -->
+<div class="glass-panel rounded-xl flex-grow flex flex-col overflow-hidden">
+<div class="p-md border-b border-outline-variant/20 flex items-center justify-between bg-surface/50">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">list_alt</span>
+                            Active Openings
+                        </h3>
+<button class="text-primary hover:text-primary-container transition-colors p-1">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<div class="overflow-y-auto max-h-[600px] p-2 space-y-2">
+<!-- Job Item 1 -->
+<div class="p-sm rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30 group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Lead Curriculum Designer</h4>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">domain</span> Curriculum
+                                    </p>
+</div>
+<span class="bg-tertiary-container/20 text-tertiary-container font-caption text-caption px-2 py-1 rounded-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span> Active
+                                </span>
+</div>
+<div class="flex items-center gap-3 mt-3">
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Remote
+                                </span>
+<span class="text-on-surface-variant font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Full-time
+                                </span>
+</div>
+</div>
+<!-- Job Item 2 -->
+<div class="p-sm rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30 group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Senior Software Engineer</h4>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">code</span> Engineering
+                                    </p>
+</div>
+<span class="bg-tertiary-container/20 text-tertiary-container font-caption text-caption px-2 py-1 rounded-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span> Active
+                                </span>
+</div>
+<div class="flex items-center gap-3 mt-3">
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Hybrid
+                                </span>
+<span class="text-on-surface-variant font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Full-time
+                                </span>
+</div>
+</div>
+<!-- Job Item 3 -->
+<div class="p-sm rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30 group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Video Production Specialist</h4>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">videocam</span> Media
+                                    </p>
+</div>
+<span class="bg-outline-variant/20 text-on-surface-variant font-caption text-caption px-2 py-1 rounded-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span> Draft
+                                </span>
+</div>
+<div class="flex items-center gap-3 mt-3">
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> On-site
+                                </span>
+<span class="text-on-surface-variant font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Contract
+                                </span>
+</div>
+</div>
+<!-- Job Item 4 -->
+<div class="p-sm rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30 group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Growth Marketing Manager</h4>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> Marketing
+                                    </p>
+</div>
+<span class="bg-tertiary-container/20 text-tertiary-container font-caption text-caption px-2 py-1 rounded-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span> Active
+                                </span>
+</div>
+<div class="flex items-center gap-3 mt-3">
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Remote
+                                </span>
+<span class="text-on-surface-variant font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Full-time
+                                </span>
+</div>
+</div>
+</div>
+<div class="p-sm border-t border-outline-variant/20 bg-surface/50 text-center">
+<button class="text-primary font-label-md text-label-md hover:underline hover:text-primary-container transition-colors">View All Openings</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+
+
+
+
+
+</body></html>
