@@ -198,11 +198,7 @@
         <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
             <!-- Hero Section -->
             <div class="text-center mb-xl">
-                <div
-                    class="inline-flex items-center space-x-2 bg-white/50 backdrop-blur-sm border border-outline-variant/30 px-sm py-xs rounded-full mb-md shadow-sm animate-[fade-in-up_0.8s_ease-out_both]">
-                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    <span class="font-label-md text-label-md text-primary font-bold">We are Online</span>
-                </div>
+
                 <h1
                     class="font-headline-xl text-headline-lg-mobile md:text-headline-xl font-bold tracking-tight mb-md bg-clip-text text-transparent bg-gradient-to-r from-on-background via-primary to-on-background animate-[fade-in-up_0.8s_ease-out_0.2s_both]">
                     Get in Touch
@@ -240,7 +236,7 @@
                         <div>
                             <h3 class="font-headline-md text-headline-md text-on-background mb-xs">Email Us</h3>
                             <p class="font-body-md text-body-md text-on-secondary-container">
-                                admissions@seekhly.com<br>
+                                <a href="mailto:admissions@seekhly.com" class="hover:text-primary transition-colors hover:underline">admissions@seekhly.com</a><br>
                             </p>
                         </div>
                     </div>
@@ -252,8 +248,8 @@
                         <div>
                             <h3 class="font-headline-md text-headline-md text-on-background mb-xs">Call Us</h3>
                             <p class="font-body-md text-body-md text-on-secondary-container">
-                                +91 9944105690<br>
-                                +91 9865211795<br>
+                                <a href="tel:+919944105690" class="hover:text-primary transition-colors hover:underline">+91 9944105690</a><br>
+                                <a href="tel:+919865211795" class="hover:text-primary transition-colors hover:underline">+91 9865211795</a><br>
                                 Mon-Fri, 9am - 6pm
                             </p>
                         </div>
@@ -411,7 +407,8 @@
                     </div>
                 </div>
 
-                <button type="submit" id="submit-btn" class="w-full mt-6 bg-gradient-primary text-white font-bold py-3.5 rounded-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                <p class="text-[13px] text-center text-on-surface-variant font-medium mt-6 mb-3">We Will Send The Fee Detail In Whatsapp</p>
+                <button type="submit" id="submit-btn" class="w-full bg-gradient-primary text-white font-bold py-3.5 rounded-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
                     <span>Submit Application</span>
                 </button>
                 <p id="form-error" class="hidden text-red-500 font-body-md text-[13px] mt-2 text-center"></p>
@@ -584,9 +581,9 @@
                 </p>
                 <!-- Social Links for AEO / Branding -->
                 <div class="flex gap-4">
-                    <a href="#" aria-label="Facebook" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">public</span></a>
-                    <a href="#" aria-label="Twitter" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></a>
-                    <a href="#" aria-label="LinkedIn" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">work</span></a>
+                    <a href="#" onclick="alert('Language selection coming soon!'); return false;" aria-label="Language" title="Change Language" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">public</span></a>
+                    <a href="#" onclick="if(navigator.share){navigator.share({title: 'Seekhly EdTech', url: window.location.href}).catch(console.error);}else{alert('Sharing is not supported on this browser.');} return false;" aria-label="Share" title="Share Website" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></a>
+                    <a href="career.html" aria-label="Careers" title="Careers" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">work</span></a>
                 </div>
             </div>
         </div>

@@ -475,7 +475,7 @@ void main() {
             <div class="w-full md:w-2/5 fade-in-up stagger-2 relative visible">
                 <!-- Floating Glass Hero Card -->
                 <div
-                    class="glass-card-dark rounded-xl p-md relative z-10 border border-white/20 bg-gradient-to-br from-inverse-surface to-[#0b1c30] shadow-[0_20px_50px_rgba(255,107,0,0.15)]">
+                    class="bg-[#06202B] rounded-xl p-md relative z-10 border border-white/20 shadow-[0_20px_50px_rgba(255,107,0,0.15)]">
                     <div class="flex justify-between items-center mb-md border-b border-white/10 pb-sm">
                         <div>
                             <p class="font-label-md text-label-md text-white font-bold">Our Students Pass Percentage</p>
@@ -1046,9 +1046,9 @@ void main() {
                 </p>
                 <!-- Social Links for AEO / Branding -->
                 <div class="flex gap-4">
-                    <a href="#" aria-label="Facebook" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">public</span></a>
-                    <a href="#" aria-label="Twitter" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></a>
-                    <a href="#" aria-label="LinkedIn" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">work</span></a>
+                    <a href="#" onclick="alert('Language selection coming soon!'); return false;" aria-label="Language" title="Change Language" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">public</span></a>
+                    <a href="#" onclick="if(navigator.share){navigator.share({title: 'Seekhly EdTech', url: window.location.href}).catch(console.error);}else{alert('Sharing is not supported on this browser.');} return false;" aria-label="Share" title="Share Website" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></a>
+                    <a href="career.html" aria-label="Careers" title="Careers" class="text-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined text-[20px]">work</span></a>
                 </div>
             </div>
         </div>
@@ -1326,7 +1326,8 @@ void main() {
                     </div>
                 </div>
 
-                <button type="submit" id="submit-btn" class="w-full mt-6 bg-gradient-primary text-white font-bold py-3.5 rounded-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                <p class="text-[13px] text-center text-on-surface-variant font-medium mt-6 mb-3">We Will Send The Fee Detail In Whatsapp</p>
+                <button type="submit" id="submit-btn" class="w-full bg-gradient-primary text-white font-bold py-3.5 rounded-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
                     <span>Submit Application</span>
                 </button>
                 <p id="form-error" class="hidden text-red-500 font-body-md text-[13px] mt-2 text-center"></p>
