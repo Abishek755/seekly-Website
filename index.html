@@ -276,37 +276,8 @@
 
 <body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
     <!-- TopNavBar -->
-    <nav
-        class="glass-nav fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 rounded-full transition-all duration-300 scale-90 origin-top">
-        <div class="flex justify-between items-center px-4 md:px-6 py-3">
-            <a class="font-headline-md text-headline-md font-bold text-white flex items-center gap-2 drop-shadow-sm ml-2"
-                href="index.html">
-                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">language</span>
-                Seekhly
-            </a>
-            <div class="hidden lg:flex items-center space-x-1 bg-white/10 p-1.5 rounded-full border border-white/10">
-                <a class="font-label-md text-label-md bg-white text-[#0b1c30] font-bold shadow-md rounded-full px-5 py-2.5 transition-all duration-300"
-                    href="index.html">Home</a>
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
-                    href="index.html#courses">Courses</a>
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
-                    href="about.html">About</a>
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
-                    href="career.html">Careers</a>
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300"
-                    href="contact.html">Contact</a>
-            </div>
-            <div class="flex items-center space-x-3">
-                <button
-                    class="bg-primary hover:bg-primary-container text-white font-label-md text-label-md px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-md hover:shadow-lg active:scale-95 hidden md:block">
-                    Join Now
-                </button>
-                <button id="mobile-menu-btn" class="lg:hidden text-white bg-white/10 p-2 rounded-full border border-white/10">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <script type="module" src="./src/navbar.js"></script>
+    <!-- Hero Section -->
     <script>
         document.addEventListener('scroll', function () {
             const nav = document.querySelector('.glass-nav');
@@ -478,7 +449,7 @@ void main() {
         </div>
         <div
             class="relative z-20 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl flex flex-col md:flex-row items-center justify-between gap-xl">
-            <div class="w-full md:w-3/5 text-center md:text-left fade-in-up visible">
+            <div class="w-full md:w-3/5 text-center md:text-left fade-in-up visible mt-16 md:mt-0">
 
                 <h1
                     class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-white mb-md drop-shadow-lg">
@@ -492,17 +463,16 @@ void main() {
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-md">
                     <a href="about.html"
-                        class="w-full sm:w-auto bg-gradient-primary text-white font-label-md text-label-md px-xl py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-[0_8px_20px_rgba(255,107,0,0.4)] flex justify-center items-center">
+                        class="w-4/5 sm:w-auto bg-gradient-primary text-white font-label-md text-label-md px-xl py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-[0_8px_20px_rgba(255,107,0,0.4)] flex justify-center items-center">
                         Explore More
                     </a>
-                    <button
-                        class="w-full sm:w-auto flex items-center justify-center gap-sm bg-white/10 border border-white/20 text-white font-label-md text-label-md px-lg py-4 rounded-full backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:border-white/40 shadow-sm hover:shadow-md">
-                        <span class="material-symbols-outlined text-orange-400">play_circle</span>
-                        See How It Works
-                    </button>
+                    <a href="contact.html"
+                        class="w-2/3 sm:w-auto flex items-center justify-center gap-sm bg-white/10 border border-white/20 text-white font-label-md text-label-md px-6 py-3 md:px-lg md:py-4 rounded-full backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:border-white/40 shadow-sm hover:shadow-md">
+                        Contact
+                    </a>
                 </div>
             </div>
-            <div class="w-full md:w-2/5 fade-in-up stagger-2 hidden md:block relative visible">
+            <div class="w-full md:w-2/5 fade-in-up stagger-2 relative visible">
                 <!-- Floating Glass Hero Card -->
                 <div
                     class="glass-card-dark rounded-xl p-md relative z-10 border border-white/20 bg-gradient-to-br from-inverse-surface to-[#0b1c30] shadow-[0_20px_50px_rgba(255,107,0,0.15)]">
@@ -938,23 +908,21 @@ void main() {
                 <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Experience an educational
                     ecosystem built for modern learners, blending advanced technology with proven pedagogy.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-md auto-rows-[250px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md auto-rows-auto md:auto-rows-[250px]">
                 <!-- Premium Learning -->
                 <div
-                    class="glass-card md:col-span-2 rounded-xl p-md flex flex-col justify-between overflow-hidden relative group fade-in-up visible bg-primary-fixed shadow-lg">
+                    class="glass-card md:col-span-2 rounded-xl p-md flex flex-col justify-center overflow-hidden relative group fade-in-up visible bg-primary-fixed shadow-lg">
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="relative z-10 w-full max-w-[60%]">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-md border border-outline-variant/30 shadow-sm">
-                            <span class="material-symbols-outlined text-primary"
-                                style="font-variation-settings: &quot;FILL&quot; 1;">workspace_premium</span>
+                    <div class="relative z-10 w-full flex flex-col items-center">
+                        <div class="flex items-center gap-4 mb-sm w-[90%] mx-auto justify-start">
+                            <div class="w-14 h-14 rounded-lg bg-surface flex flex-shrink-0 items-center justify-center border border-outline-variant/30 shadow-sm">
+                                <span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: &quot;FILL&quot; 1;">workspace_premium</span>
+                            </div>
+                            <h3 class="font-headline-md text-[20px] text-on-surface flex-1 text-center leading-tight font-bold">Premium Learning Experience</h3>
                         </div>
-                        <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Premium Learning Experience
-                        </h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Immersive content, high-quality
-                            video production, and expertly crafted curriculum designed by industry leaders.</p>
+                        <p class="font-body-md text-base text-on-surface-variant text-center w-full">Immersive content, high-quality video production, and expertly crafted curriculum designed by industry leaders.</p>
                     </div>
                     <div class="absolute bottom-0 right-0 w-1/2 h-full opacity-10 pointer-events-none"
                         style="background-image: radial-gradient(circle at center, #a04100 1px, transparent 1px); background-size: 16px 16px;">
@@ -962,50 +930,46 @@ void main() {
                 </div>
                 <!-- Easily Accessible -->
                 <div
-                    class="glass-card rounded-xl p-md flex flex-col justify-between overflow-hidden relative group fade-in-up stagger-1 visible bg-surface-variant shadow-md">
-                    <div class="relative z-10">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-md border border-outline-variant/30 shadow-sm">
-                            <span class="material-symbols-outlined text-tertiary-container"
-                                style="font-variation-settings: &quot;FILL&quot; 1;">devices</span>
+                    class="glass-card rounded-xl p-md flex flex-col justify-center overflow-hidden relative group fade-in-up stagger-1 visible bg-surface-variant shadow-md">
+                    <div class="relative z-10 w-full flex flex-col items-center">
+                        <div class="flex items-center gap-4 mb-sm w-[90%] mx-auto justify-start">
+                            <div class="w-14 h-14 rounded-lg bg-surface flex flex-shrink-0 items-center justify-center border border-outline-variant/30 shadow-sm">
+                                <span class="material-symbols-outlined text-tertiary-container text-[32px]" style="font-variation-settings: &quot;FILL&quot; 1;">devices</span>
+                            </div>
+                            <h3 class="font-headline-md text-[20px] text-on-surface flex-1 text-center leading-tight font-bold">Easily Accessible</h3>
                         </div>
-                        <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Easily Accessible</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Learn anywhere, anytime. Seamless
-                            transition between web and mobile.</p>
+                        <p class="font-body-md text-base text-on-surface-variant text-center w-full">Learn anywhere, anytime. Seamless transition between web and mobile.</p>
                     </div>
                 </div>
                 <!-- Fun Learning -->
                 <div
-                    class="glass-card rounded-xl p-md flex flex-col justify-between overflow-hidden relative group fade-in-up stagger-2 visible bg-tertiary-container shadow-md">
-                    <div class="relative z-10">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-md border border-outline-variant/30 shadow-sm">
-                            <span class="material-symbols-outlined text-secondary"
-                                style="font-variation-settings: &quot;FILL&quot; 1;">emoji_events</span>
+                    class="glass-card rounded-xl p-md flex flex-col justify-center overflow-hidden relative group fade-in-up stagger-2 visible bg-tertiary-container shadow-md">
+                    <div class="relative z-10 w-full flex flex-col items-center">
+                        <div class="flex items-center gap-4 mb-sm w-[90%] mx-auto justify-start">
+                            <div class="w-14 h-14 rounded-lg bg-surface flex flex-shrink-0 items-center justify-center border border-outline-variant/30 shadow-sm">
+                                <span class="material-symbols-outlined text-secondary text-[32px]" style="font-variation-settings: &quot;FILL&quot; 1;">emoji_events</span>
+                            </div>
+                            <h3 class="font-headline-md text-[20px] text-on-surface flex-1 text-center leading-tight font-bold">Fun Learning<br>Experience</h3>
                         </div>
-                        <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Fun Learning Experience</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Gamified elements, interactive
-                            quizzes, and peer challenges keep you motivated.</p>
+                        <p class="font-body-md text-base text-on-surface-variant text-center w-full">Gamified elements, interactive quizzes, and peer challenges keep you motivated.</p>
                     </div>
                 </div>
                 <!-- Learn with AI -->
                 <div
-                    class="glass-card md:col-span-2 rounded-xl p-md flex flex-col justify-between overflow-hidden relative group bg-inverse-surface text-inverse-on-surface fade-in-up stagger-3 visible border-primary/30">
+                    class="glass-card md:col-span-2 rounded-xl p-md flex flex-col justify-center overflow-hidden relative group bg-inverse-surface text-inverse-on-surface fade-in-up stagger-3 visible border-primary/30">
                     <div class="absolute inset-0 bg-gradient-to-br from-inverse-surface to-on-surface opacity-90 z-0">
                     </div>
-                    <div class="relative z-10 flex h-full items-center">
-                        <div class="w-1/2 pr-md">
-                            <div
-                                class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-md backdrop-blur-sm border border-white/20">
-                                <span class="material-symbols-outlined text-primary-fixed-dim"
-                                    style="font-variation-settings: &quot;FILL&quot; 1;">record_voice_over</span>
+                    <div class="relative z-10 flex flex-col md:flex-row h-full items-center gap-6 md:gap-0">
+                        <div class="w-full md:w-1/2 md:pr-md flex flex-col items-center justify-center">
+                            <div class="flex items-center gap-4 mb-sm w-[90%] mx-auto justify-start">
+                                <div class="w-14 h-14 rounded-lg bg-white/10 flex flex-shrink-0 items-center justify-center backdrop-blur-sm border border-white/20">
+                                    <span class="material-symbols-outlined text-primary-fixed-dim text-[32px]" style="font-variation-settings: &quot;FILL&quot; 1;">record_voice_over</span>
+                                </div>
+                                <h3 class="font-headline-md text-[20px] text-white flex-1 text-center leading-tight font-bold">Learn with AI Speech &amp; Quiz</h3>
                             </div>
-                            <h3 class="font-headline-md text-headline-md text-white mb-xs">Learn with AI Speech &amp;
-                                Quiz</h3>
-                            <p class="font-body-md text-body-md text-secondary-fixed-dim">Real-time pronunciation
-                                feedback and adaptive quizzes powered by advanced AI.</p>
+                            <p class="font-body-md text-base text-secondary-fixed-dim text-center w-full">Real-time pronunciation feedback and adaptive quizzes powered by advanced AI.</p>
                         </div>
-                        <div class="w-1/2 h-full flex items-center justify-center relative">
+                        <div class="w-full md:w-1/2 h-full flex items-center justify-center relative">
                             <div
                                 class="w-full max-w-[200px] aspect-square rounded-full border border-primary-fixed/30 flex items-center justify-center relative">
                                 <div class="absolute inset-0 rounded-full border-2 border-primary-fixed-dim border-dashed animate-spin"
@@ -1485,45 +1449,8 @@ void main() {
 
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-nav-overlay" class="fixed inset-0 bg-background/95 backdrop-blur-xl z-[150] hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
-        <button id="close-mobile-nav" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-surface-variant text-on-surface-variant hover:bg-outline-variant/30 transition-colors">
-            <span class="material-symbols-outlined text-[28px]">close</span>
-        </button>
-        
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="index.html#courses">Courses</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="about.html">About</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="career.html">Careers</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="contact.html">Contact</a>
-        <button class="bg-primary hover:bg-primary-container text-white font-label-md px-8 py-3 rounded-full transition-all duration-300 shadow-md">
-            Join Now
-        </button>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const closeBtn = document.getElementById('close-mobile-nav');
-            const overlay = document.getElementById('mobile-nav-overlay');
-            const mobileLinks = overlay ? overlay.querySelectorAll('a, button') : [];
-
-            if (mobileBtn && closeBtn && overlay) {
-                mobileBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    overlay.classList.remove('hidden');
-                    // slight delay to allow display:block to apply before animating opacity
-                    setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-                });
-
-                const closeMenu = () => {
-                    overlay.classList.add('opacity-0');
-                    setTimeout(() => overlay.classList.add('hidden'), 300);
-                };
-
-                closeBtn.addEventListener('click', closeMenu);
-                mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
-            }
-        });
-    </script>
+    
+    
 </body>
 
 </html>
