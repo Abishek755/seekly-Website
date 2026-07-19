@@ -168,91 +168,12 @@
                 transform: translateY(0);
             }
         }
-
-        .glass-nav {
-            background: rgba(11, 28, 48, 0.65) !important;
-            backdrop-filter: blur(4px) !important;
-            -webkit-backdrop-filter: blur(4px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.15) !important;
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                inset 0 0 8px 1px rgba(255, 255, 255, 0.05) !important;
-            overflow: hidden;
-            transition: all 0.3s ease !important;
-        }
-
-        .glass-nav.scrolled {
-            background: rgba(11, 28, 48, 0.3) !important;
-            backdrop-filter: blur(2px) !important;
-            -webkit-backdrop-filter: blur(2px) !important;
-        }
-
-        .glass-nav:hover {
-            background: rgba(11, 28, 48, 0.65) !important;
-            backdrop-filter: blur(4px) !important;
-            -webkit-backdrop-filter: blur(4px) !important;
-        }
-
-        .glass-nav::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        }
-
-        .glass-nav::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent, rgba(255, 255, 255, 0.05));
-        }
-    </style>
+        </style>
+    <script type="module" src="./src/navbar.js"></script>
 </head>
 
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
     <!-- TopNavBar -->
-    <nav class="glass-nav fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 rounded-full transition-all duration-300 scale-90 origin-top">
-        <div class="flex justify-between items-center px-4 md:px-6 py-3">
-            <a class="font-headline-md text-headline-md font-bold text-white flex items-center gap-2 drop-shadow-sm ml-2" href="index.html">
-                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">language</span>
-                Seekhly
-            </a>
-            <div class="hidden lg:flex items-center space-x-1 bg-white/10 p-1.5 rounded-full border border-white/10">
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300" href="index.html">Home</a>
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300" href="index.html#courses">Courses</a>
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300" href="about.html">About</a>
-                <a class="font-label-md text-label-md text-white/80 hover:text-white hover:bg-white/10 rounded-full px-5 py-2.5 transition-all duration-300" href="career.html">Careers</a>
-                <a class="font-label-md text-label-md bg-white text-[#0b1c30] font-bold shadow-md rounded-full px-5 py-2.5 transition-all duration-300" href="contact.html">Contact</a>
-            </div>
-            <div class="flex items-center space-x-3">
-                <button class="bg-primary hover:bg-primary-container text-white font-label-md text-label-md px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-md hover:shadow-lg active:scale-95 hidden md:block">
-                    Join Now
-                </button>
-                <button id="mobile-menu-btn" class="lg:hidden text-white bg-white/10 p-2 rounded-full border border-white/10">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <script>
-        document.addEventListener('scroll', function() {
-            const nav = document.querySelector('.glass-nav');
-            if (nav) {
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
-            }
-        });
-    </script>
     <!-- Main Content -->
     <main class="flex-grow pt-[100px] md:pt-[120px] pb-xl relative overflow-hidden">
         <!-- Abstract Animated Background Decoration -->
@@ -621,8 +542,9 @@
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
             <div class="col-span-1 mb-8 md:mb-0">
-                <a class="font-headline-md text-headline-md font-bold text-primary-fixed dark:text-primary mb-2 inline-block"
-                    href="index.html">Seekhly</a>
+                <a class="inline-block mb-4" href="index.html">
+                    <img src="/logo-full.png" alt="Seekly" class="h-8 object-contain">
+                </a>
                 <p class="font-body-md text-[14px] text-surface-variant dark:text-on-surface-variant mt-2 leading-relaxed">
                     Empowering futures through smart, accessible, and interactive Hindi learning experiences for students, teachers, and professionals.
                 </p>
@@ -669,48 +591,23 @@
             </div>
         </div>
     </footer>
-
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-nav-overlay" class="fixed inset-0 bg-background/95 backdrop-blur-xl z-[150] hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
-        <button id="close-mobile-nav" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-surface-variant text-on-surface-variant hover:bg-outline-variant/30 transition-colors">
-            <span class="material-symbols-outlined text-[28px]">close</span>
-        </button>
-        
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="index.html#courses">Courses</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="about.html">About</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="career.html">Careers</a>
-        <a class="font-headline-md text-2xl text-on-background hover:text-primary transition-colors" href="contact.html">Contact</a>
-        <button class="bg-primary hover:bg-primary-container text-white font-label-md px-8 py-3 rounded-full transition-all duration-300 shadow-md">
-            Join Now
-        </button>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-dropdown" class="lg:hidden fixed top-[4.2rem] right-[2.5%] w-[180px] z-[140] hidden">
+        <div class="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+            <nav class="flex flex-col p-2 gap-0.5">
+                <a class="mobile-drop-link text-gray-800 font-medium text-sm px-3 py-2.5 rounded-lg hover:bg-orange-50 hover:text-primary transition-all" href="index.html">Home</a>
+                <a class="mobile-drop-link text-gray-800 font-medium text-sm px-3 py-2.5 rounded-lg hover:bg-orange-50 hover:text-primary transition-all" href="index.html#courses">Courses</a>
+                <a class="mobile-drop-link text-gray-800 font-medium text-sm px-3 py-2.5 rounded-lg hover:bg-orange-50 hover:text-primary transition-all" href="about.html">About</a>
+                <a class="mobile-drop-link text-gray-800 font-medium text-sm px-3 py-2.5 rounded-lg hover:bg-orange-50 hover:text-primary transition-all" href="career.html">Careers</a>
+                <a class="mobile-drop-link text-gray-800 font-medium text-sm px-3 py-2.5 rounded-lg hover:bg-orange-50 hover:text-primary transition-all" href="contact.html">Contact</a>
+                <div class="border-t border-gray-100 mt-1 pt-1">
+                    <button class="mobile-drop-link w-full bg-primary text-white font-semibold text-sm px-3 py-2.5 rounded-lg transition-all duration-300">
+                        Join Now
+                    </button>
+                </div>
+            </nav>
+        </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const closeBtn = document.getElementById('close-mobile-nav');
-            const overlay = document.getElementById('mobile-nav-overlay');
-            const mobileLinks = overlay ? overlay.querySelectorAll('a, button') : [];
-
-            if (mobileBtn && closeBtn && overlay) {
-                mobileBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    overlay.classList.remove('hidden');
-                    // slight delay to allow display:block to apply before animating opacity
-                    setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-                });
-
-                const closeMenu = () => {
-                    overlay.classList.add('opacity-0');
-                    setTimeout(() => overlay.classList.add('hidden'), 300);
-                };
-
-                closeBtn.addEventListener('click', closeMenu);
-                mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
-            }
-        });
-    </script>
 </body>
 
 </html>
