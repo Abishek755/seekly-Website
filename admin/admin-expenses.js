@@ -1,6 +1,17 @@
 import { db } from '../src/firebase.js';
 import { collection, addDoc, onSnapshot, serverTimestamp, deleteDoc, doc, query, orderBy } from "firebase/firestore";
 
+async function deleteAdminExpense(id) {
+    if (confirm("Are you sure you want to delete this expense?")) {
+        try {
+            await deleteDoc(doc(db, "expenses", id));
+        } catch (error) {
+            console.error("Error deleting expense: ", error);
+            alert("Failed to delete expense.");
+        }
+    }
+}
+
 const createExpenseForm = document.getElementById('create-expense-form');
 const createExpenseBtn = document.getElementById('create-expense-btn');
 const expenseDescInput = document.getElementById('expense-desc');
@@ -33,18 +44,6 @@ if (createExpenseForm) {
     });
 }
 
-// Global function to delete expense
-window.deleteAdminExpense = async function(id) {
-    if (confirm("Are you sure you want to delete this expense?")) {
-        try {
-            await deleteDoc(doc(db, "expenses", id));
-        } catch (error) {
-            console.error("Error deleting expense: ", error);
-            alert("Failed to delete expense.");
-        }
-    }
-};
-
 // Listen to expenses
 if (expensesListEl) {
     const q = query(collection(db, "expenses"), orderBy("createdAt", "desc"));
@@ -73,7 +72,7 @@ if (expensesListEl) {
                 <td class="py-4 px-md font-body-md text-error font-semibold">${amountStr}</td>
                 <td class="py-4 px-md font-caption text-caption text-on-surface-variant">${dateStr}</td>
                 <td class="py-4 px-md text-right">
-                    <button onclick="deleteAdminExpense('${docSnap.id}')" class="text-on-surface-variant hover:text-error transition-colors p-1 rounded">
+                    <button data-action="delete-expense" data-id="${docSnap.id}" class="text-on-surface-variant hover:text-error transition-colors p-1 rounded">
                         <span class="material-symbols-outlined text-[18px]">delete</span>
                     </button>
                 </td>
@@ -82,3 +81,11 @@ if (expensesListEl) {
         });
     });
 }
+
+// Event delegation for expense actions
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action="delete-expense"]');
+    if (btn) {
+        deleteAdminExpense(btn.dataset.id);
+    }
+});

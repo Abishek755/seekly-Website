@@ -1,6 +1,17 @@
 import { db } from '../src/firebase.js';
 import { collection, addDoc, onSnapshot, serverTimestamp, deleteDoc, doc } from "firebase/firestore";
 
+async function deleteAdminCourse(id) {
+    if (confirm("Are you sure you want to delete this course?")) {
+        try {
+            await deleteDoc(doc(db, "admin_courses", id));
+        } catch (error) {
+            console.error("Error deleting course: ", error);
+            alert("Failed to delete course.");
+        }
+    }
+}
+
 
 
 const createCourseForm = document.getElementById('create-course-form');
@@ -35,18 +46,6 @@ if (createCourseForm) {
     });
 }
 
-// Global function to delete course
-window.deleteAdminCourse = async function(id) {
-    if (confirm("Are you sure you want to delete this course?")) {
-        try {
-            await deleteDoc(doc(db, "admin_courses", id));
-        } catch (error) {
-            console.error("Error deleting course: ", error);
-            alert("Failed to delete course.");
-        }
-    }
-};
-
 // Listen to courses
 if (coursesListEl) {
     onSnapshot(collection(db, "admin_courses"), (snapshot) => {
@@ -68,7 +67,7 @@ if (coursesListEl) {
                 <td class="py-4 px-md font-body-md text-on-background">${data.name}</td>
                 <td class="py-4 px-md font-body-md text-on-surface-variant">${costStr}</td>
                 <td class="py-4 px-md">
-                    <button onclick="deleteAdminCourse('${doc.id}')" class="text-error hover:text-error-container">
+                    <button data-action="delete-course" data-id="${doc.id}" class="text-error hover:text-error-container">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </td>
@@ -77,3 +76,11 @@ if (coursesListEl) {
         });
     });
 }
+
+// Event delegation for delete buttons
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action="delete-course"]');
+    if (btn) {
+        deleteAdminCourse(btn.dataset.id);
+    }
+});

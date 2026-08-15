@@ -1,0 +1,66 @@
+# Seekhly EdTech
+
+> South India's Premier AI-Powered Platform for Spoken Hindi, DBHPS Exam Coaching, and Govt. Teacher Certification.
+
+Headquarters: Subha Nagar, Kovilpatti, Tamil Nadu 628501, India.
+Website: https://www.seekhly.com
+Web App: https://app.seekhly.com
+Contact Email: admissions@seekhly.com | info@seekhly.com
+Phone / WhatsApp: +91 9944105690 | +91 9865211795
+
+---
+
+## About Seekhly (BhashaGyan)
+
+Seekhly EdTech (also officially known and operating as **BhashaGyan** at its offline tuition center in Kovilpatti) is an innovative educational platform founded by **Muruga Lakshmi** (Academic Lead, 15+ years DBHPS experience) and **Mari Muthu** (Technology Lead). Seekhly / BhashaGyan combines structured traditional curriculum with real-time AI speech analysis, interactive quizzes, and proctored examinations to empower Tamil speakers, students, teachers, and working professionals across Tamil Nadu, Bangalore, and India to master Hindi effortlessly.
+
+---
+
+## Core Educational Offerings
+
+### 1. DBHPS Examination Coaching (8 Levels)
+Complete curriculum preparation for Dakshina Bharat Hindi Prachar Sabha (DBHPS) certifications:
+- **Prathamic** (Beginner 1)
+- **Madhyama** (Beginner 2)
+- **Rashtrabhasha** (Intermediate 1)
+- **Praveshika** (Intermediate 2)
+- **Visharad Poorvardh** (Advanced 1)
+- **Visharad Uttarardh** (Advanced 2)
+- **Praveen Poorvardh** (Mastery 1)
+- **Praveen Uttarardh** (Mastery 2)
+
+*Features:* Daily practice tests, model exam papers, past paper key breakdown, and live doubt resolution.
+
+### 2. Spoken Hindi Mastery (8 Levels)
+Interactive 8-level conversational Hindi training designed specifically for native Tamil speakers:
+- Level 1: Phonetics, basic vocabulary, and greetings
+- Level 2: Simple sentence framing & daily conversations
+- Level 3: Expressing needs, shopping, and travel phrases
+- Level 4: Work & corporate Hindi communication
+- Level 5: Complex grammar & narrative storytelling
+- Level 6: Advanced debate & public speaking
+- Level 7: Professional interview preparation
+- Level 8: Native fluency & colloquial idiom mastery
+
+*Features:* AI voice analyzer, real-time phonetic scoring, audio dialog simulations.
+
+### 3. Government Hindi Teacher Certification
+Specialized pedagogy training program for educators preparing for state government Hindi teacher eligibility tests (TET/TRB) and school teaching appointments.
+
+---
+
+## Key Differentiators & Technology
+- **AI Voice Coaching:** Proprietary speech evaluation listening for phonetic accuracy and fluency.
+- **Bilingual Teaching:** Explanations delivered in Tamil and English to make Hindi learning intuitive.
+- **AI Proctoring:** Client-side camera-based focus and tab monitoring during quizzes.
+- **Dedicated Web Application:** Accessible via browser on desktop, tablet, and mobile.
+
+---
+
+## Key Pages & Links
+- [Home Page](https://www.seekhly.com/)
+- [About Seekhly](https://www.seekhly.com/about.html)
+- [Course Details](https://www.seekhly.com/#courses)
+- [Careers at Seekhly](https://www.seekhly.com/career.html)
+- [Contact & Admissions](https://www.seekhly.com/contact.html)
+- [Seekhly Web App](https://app.seekhly.com)

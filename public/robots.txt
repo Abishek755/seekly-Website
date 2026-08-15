@@ -1,4 +1,34 @@
 User-agent: *
 Allow: /
+Disallow: /admin.html
+Disallow: /src/
 
+# AI Crawlers & Answer Engine Bots (Explicitly Allowed)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OIMGBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemap & LLM Knowledge References
 Sitemap: https://www.seekhly.com/sitemap.xml
+# LLM Summary: https://www.seekhly.com/llms.txt
+# LLM Full Knowledge: https://www.seekhly.com/llms-full.txt

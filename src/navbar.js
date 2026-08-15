@@ -80,7 +80,7 @@ const navHTML = `
 <nav class="glass-nav fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 rounded-full transition-all duration-300 scale-90 origin-top">
   <div class="flex justify-between items-center px-4 md:px-6 py-3">
     <a class="flex items-center gap-2 z-50 relative ml-2" href="index.html">
-      <img src="/logo-full.png" alt="Seekhly" class="h-6 md:h-8 object-contain">
+      <img src="/logo-full.png" alt="Seekhly EdTech Logo" width="160" height="32" loading="eager" class="h-6 md:h-8 object-contain">
     </a>
     <div class="hidden lg:flex items-center space-x-1 bg-white/10 p-1.5 rounded-full border border-white/10">
       ${desktopLinks}

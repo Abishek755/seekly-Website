@@ -1,0 +1,51 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ========================================
+    // PUBLIC READ-ONLY: Courses & Careers
+    // ========================================
+    match /courses/{document} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /careers/{document} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ========================================
+    // AUTHENTICATED WRITE: Enquiries (anyone can submit)
+    // But rate-limited via Firebase Extension or client-side
+    // ========================================
+    match /enquiries/{document} {
+      allow read: if request.auth != null;
+      allow create: if true;  // Public submission
+      allow update, delete: if request.auth != null;
+    }
+
+    // ========================================
+    // ADMIN ONLY: Everything else
+    // ========================================
+    match /admin_courses/{document} {
+      allow read, write: if request.auth != null;
+    }
+
+    match /students/{document} {
+      allow read, write: if request.auth != null;
+    }
+
+    match /expenses/{document} {
+      allow read, write: if request.auth != null;
+    }
+
+    // ========================================
+    // Deny everything else
+    // ========================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

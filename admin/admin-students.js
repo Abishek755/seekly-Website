@@ -1,6 +1,34 @@
 import { db } from '../src/firebase.js';
 import { collection, addDoc, onSnapshot, serverTimestamp, deleteDoc, doc, updateDoc } from "firebase/firestore";
 
+async function deleteAdminStudent(id) {
+    if (confirm("Are you sure you want to delete this student record?")) {
+        try {
+            await deleteDoc(doc(db, "students", id));
+        } catch (error) {
+            console.error("Error deleting student: ", error);
+            alert("Failed to delete student.");
+        }
+    }
+}
+
+async function updateStudentFee(id, currentPaid) {
+    const amountStr = prompt("Enter the new total amount paid by the student:", currentPaid);
+    if (amountStr !== null && amountStr !== "") {
+        const newPaid = parseFloat(amountStr);
+        if (!isNaN(newPaid)) {
+            try {
+                await updateDoc(doc(db, "students", id), {
+                    feePaid: newPaid
+                });
+            } catch (error) {
+                console.error("Error updating fee: ", error);
+                alert("Failed to update fee.");
+            }
+        }
+    }
+}
+
 
 
 const createStudentForm = document.getElementById('create-student-form');
@@ -63,36 +91,6 @@ if (createStudentForm) {
     });
 }
 
-// Global function to delete student
-window.deleteAdminStudent = async function(id) {
-    if (confirm("Are you sure you want to delete this student record?")) {
-        try {
-            await deleteDoc(doc(db, "students", id));
-        } catch (error) {
-            console.error("Error deleting student: ", error);
-            alert("Failed to delete student.");
-        }
-    }
-};
-
-// Global function to update fee paid
-window.updateStudentFee = async function(id, currentPaid) {
-    const amountStr = prompt("Enter the new total amount paid by the student:", currentPaid);
-    if (amountStr !== null && amountStr !== "") {
-        const newPaid = parseFloat(amountStr);
-        if (!isNaN(newPaid)) {
-            try {
-                await updateDoc(doc(db, "students", id), {
-                    feePaid: newPaid
-                });
-            } catch (error) {
-                console.error("Error updating fee: ", error);
-                alert("Failed to update fee.");
-            }
-        }
-    }
-};
-
 // Listen to students
 if (studentsListEl) {
     onSnapshot(collection(db, "students"), (snapshot) => {
@@ -120,7 +118,7 @@ if (studentsListEl) {
                 <td class="py-4 px-md font-body-md text-on-surface-variant">${data.phone}</td>
                 <td class="py-4 px-md font-body-md text-on-surface-variant">${data.courseName}</td>
                 <td class="py-4 px-md font-body-md text-on-surface-variant">${formatter.format(totalFee)}</td>
-                <td class="py-4 px-md font-body-md text-on-surface-variant cursor-pointer hover:text-primary transition-colors" onclick="updateStudentFee('${docSnap.id}', ${feePaid})" title="Click to update fee paid">
+                <td class="py-4 px-md font-body-md text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-action="update-fee" data-id="${docSnap.id}" data-current="${feePaid}" title="Click to update fee paid">
                     ${formatter.format(feePaid)} <span class="material-symbols-outlined text-[14px] ml-1">edit</span>
                 </td>
                 <td class="py-4 px-md">
@@ -129,7 +127,7 @@ if (studentsListEl) {
                     </span>
                 </td>
                 <td class="py-4 px-md text-right">
-                    <button onclick="deleteAdminStudent('${docSnap.id}')" class="text-error hover:text-error-container p-1 rounded transition-colors">
+                    <button data-action="delete-student" data-id="${docSnap.id}" class="text-error hover:text-error-container p-1 rounded transition-colors">
                         <span class="material-symbols-outlined text-[18px]">delete</span>
                     </button>
                 </td>
@@ -138,3 +136,15 @@ if (studentsListEl) {
         });
     });
 }
+
+// Event delegation for student actions
+document.addEventListener('click', (e) => {
+    const deleteBtn = e.target.closest('[data-action="delete-student"]');
+    if (deleteBtn) {
+        deleteAdminStudent(deleteBtn.dataset.id);
+    }
+    const feeBtn = e.target.closest('[data-action="update-fee"]');
+    if (feeBtn) {
+        updateStudentFee(feeBtn.dataset.id, parseFloat(feeBtn.dataset.current));
+    }
+});

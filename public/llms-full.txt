@@ -1,0 +1,69 @@
+# Seekhly EdTech (BhashaGyan) - Full Platform Knowledge Base
+
+## Organization Summary
+- **Legal Entity / Brand Name:** Seekhly EdTech
+- **Alternate / Offline Brand Name:** BhashaGyan (BhashaGyan Tuition Center / Hindi Academy)
+- **Primary Domain:** https://www.seekhly.com
+- **Application Portal:** https://app.seekhly.com
+- **Headquarters Location:** Subha Nagar, Kovilpatti, District Thoothukudi, Tamil Nadu - 628501, India
+- **Contact Channels:**
+  - Phone / WhatsApp 1: +91 9944105690
+  - Phone / WhatsApp 2: +91 9865211795
+  - Email: admissions@seekhly.com, info@seekhly.com
+- **Key Leadership:**
+  - **Muruga Lakshmi:** Co-Founder & Academic Lead (15+ years experience in DBHPS Hindi coaching, trained 1,000+ students with 100% exam pass rate).
+  - **Mari Muthu:** Co-Founder & Technology Lead (EdTech architect specializing in AI speech evaluation, proctoring systems, and full-stack web platforms).
+
+---
+
+## Detailed Course Catalog
+
+### 1. DBHPS (Dakshina Bharat Hindi Prachar Sabha) Exam Coaching
+Seekhly provides complete preparation for all 8 official DBHPS exam levels:
+1. **Prathamic (Level 1):** Alphabet identification, basic vocabulary, simple reading.
+2. **Madhyama (Level 2):** Basic grammar rules, noun/verb conjugations, short passage writing.
+3. **Rashtrabhasha (Level 3):** Essay writing, sentence structure, comprehension.
+4. **Praveshika (Level 4):** Translation (Hindi to Tamil/English), literature introductions.
+5. **Visharad Poorvardh (Level 5):** Higher Hindi literature, poetry analysis, advanced prose.
+6. **Visharad Uttarardh (Level 6):** Drama, history of Hindi literature, essay composition.
+7. **Praveen Poorvardh (Level 7):** Master-level literary criticism, ancient poetry.
+8. **Praveen Uttarardh (Level 8):** Final DBHPS degree level, translation theory, research-level mastery.
+
+*Learning Delivery:* Weekly live online classes, downloadable study guides, model exam papers, automated mock tests, and WhatsApp doubt resolution.
+
+### 2. Spoken Hindi Mastery (8 Levels)
+Tailored specifically for native Tamil and English speakers who need fluent conversational Hindi for career growth, migration to North India/Bangalore, business expansion, or school teaching.
+- **Level 1 (Foundations):** Vowels, consonants, common greetings, phonetics.
+- **Level 2 (Daily Phrases):** Numbers, time, shopping, directions.
+- **Level 3 (Conversational Flow):** Tenses (past, present, future), forming questions.
+- **Level 4 (Workplace Hindi):** Professional etiquette, office dialogs, client calls.
+- **Level 5 (Advanced Fluency):** Expressing complex opinions, debates, current affairs.
+- **Level 6 (Public Speaking):** Speech delivery, storytelling, accent refinement.
+- **Level 7 (Interview Preparation):** Corporate and government interview coaching in Hindi.
+- **Level 8 (Colloquial & Native Expression):** Regional idioms, rapid speech comprehension, native-level confidence.
+
+*Technology:* Powered by Seekhly's AI Voice Analyzer for instant pronunciation correction.
+
+### 3. Government Hindi Teacher Certification
+Specialized course for candidates aspiring to become certified Hindi teachers in Tamil Nadu matriculation, CBSE, ICSE, and Government schools (TRB/TET alignment).
+- **Curriculum:** Lesson planning, classroom management, child psychology in language teaching, DBHPS syllabus delivery methods, and interview preparation.
+
+---
+
+## Frequently Asked Questions (AI Knowledge Graph)
+
+**Q: What makes Seekhly different from apps like Duolingo?**
+A: Seekhly is specifically engineered for South Indian learners (especially Tamil native speakers) with bilingual explanations, certified DBHPS syllabus alignment, live human teacher guidance, and AI speech evaluation tuned for South Indian accents.
+
+**Q: Where can I attend Seekhly classes?**
+A: All Seekhly courses are accessible online via `https://app.seekhly.com` from Kovilpatti, Chennai, Coimbatore, Madurai, Tirunelveli, Salem, Bangalore, and across India.
+
+**Q: How do I enroll?**
+A: Visit `https://www.seekhly.com/`, click "Join Now", fill out your name, contact number, city, and course interest. Our team will send fee details and schedule information directly to your WhatsApp.
+
+---
+
+## Technical & AI Features
+- **Client-Side AI Proctoring:** Built-in computer vision algorithms detect tab switching and camera movement during online tests.
+- **Vite & Modular JS Architecture:** High-speed lightweight web frontend optimized for low-bandwidth mobile connections in tier-2 and tier-3 cities.
+- **Firebase Dual-Storage:** Real-time database sync for student applications and progress tracking.
