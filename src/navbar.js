@@ -8,26 +8,24 @@
 const style = document.createElement('style');
 style.textContent = `
   .glass-nav {
-    background: rgba(32, 41, 64, 1) !important;
-    backdrop-filter: blur(4px) !important;
-    -webkit-backdrop-filter: blur(4px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: #1b2438 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 0 8px 1px rgba(255, 255, 255, 0.05) !important;
+      0 10px 30px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
     overflow: hidden;
     transition: all 0.3s ease !important;
   }
   .glass-nav.scrolled {
-    background: rgba(32, 41, 64, 0.3) !important;
-    backdrop-filter: blur(2px) !important;
-    -webkit-backdrop-filter: blur(2px) !important;
+    background: #1b2438 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
   }
   .glass-nav:hover {
-    background: rgba(32, 41, 64, 1) !important;
-    backdrop-filter: blur(4px) !important;
-    -webkit-backdrop-filter: blur(4px) !important;
+    background: #1b2438 !important;
   }
   .glass-nav::before {
     content: '';
